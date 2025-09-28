@@ -1,0 +1,12 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "wrrw",
+            "precio": 12.0,
+            "cant": 12,
+            "stock": 23,
+            "stock_minimo": 1
+        }
+    ]
+}

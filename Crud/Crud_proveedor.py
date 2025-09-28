@@ -1,11 +1,15 @@
 import json
 from itertools import product
+import os
 
 from models.proveedor import Proveedor
 
 archivo= "data/Proveedores.json"
 
 def cargar_datos():
+    if not os.path.exists(archivo) or os.path.getsize(archivo) == 0:
+        # Si no existe o está vacío, devolvemos lista vacía
+        return []
     try:
         with open(archivo, "r") as f: #abrir el archivo para cargar los datos
             data = json.load(f)
@@ -13,9 +17,10 @@ def cargar_datos():
     except FileNotFoundError:
             return []
 
+
 def guardar_datos(proveedor):
     with open(archivo, "w") as f:
-        json.dump({"proveedor": [p.__dict__ for p in productos]}, f, indent=4)
+        json.dump({"proveedor": [p.__dict__ for p in proveedor]}, f, indent=4)
 
 def crear_proveedor(proveedor):
     proveedors = cargar_datos()
