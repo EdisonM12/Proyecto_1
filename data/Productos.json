@@ -17,11 +17,23 @@
             "nombre": "qqq",
             "precio": 34.0,
             "cantidad": 23,
-            "stock": 45,
+            "stock": 47,
             "stock_minimo": 1,
             "categoria": {
                 "id": 1,
                 "nombre": "wwww"
+            }
+        },
+        {
+            "id": 3,
+            "nombre": "WWW",
+            "precio": 2.0,
+            "cantidad": 12,
+            "stock": 34,
+            "stock_minimo": 45,
+            "categoria": {
+                "id": 3,
+                "nombre": "WWW"
             }
         }
     ]

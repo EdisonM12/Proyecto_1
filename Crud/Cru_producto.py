@@ -19,7 +19,7 @@ def cargar_datos():
                     id=p["id"],
                     nombre=p["nombre"],
                     precio=p["precio"],
-                    cant=p["cant"],
+                    cant=p["cantidad"],
                     stock=p["stock"],
                     stock_minimo=p["stock_minimo"],
                     categoria=cat

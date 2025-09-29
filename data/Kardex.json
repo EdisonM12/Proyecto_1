@@ -17,6 +17,18 @@
             "fecha": "2025-09-29T01:55:41.161731",
             "stock_anterior": 43,
             "stock_nuevo": 38
+        },
+        {
+            "id_mov": 3,
+            "id_producto": 2,
+            "Categoria": {
+                "id": 1,
+                "Nombre de categoria": "wwww"
+            },
+            "cantidad": 23,
+            "fecha": "2025-09-29T03:12:53.799130",
+            "stock_anterior": 45,
+            "stock_nuevo": 47
         }
     ]
 }

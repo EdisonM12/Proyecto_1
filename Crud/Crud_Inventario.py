@@ -22,7 +22,7 @@ def guardar_movimientos(movimientos):
         json.dump({"movimientos": movimientos}, f, indent=4, ensure_ascii=False)
 
 #
-def registrar_movimiento(id_producto, tipo, cantidad):
+def registrar_movimiento(id_producto, tipo, cant):
     #Registra un movimiento de inventario (si es COMPRA o VENTA)
     #Ajusta stock del producto y lo guarda en Kardex.json
     productos = Cru_producto.cargar_datos()
@@ -35,18 +35,18 @@ def registrar_movimiento(id_producto, tipo, cantidad):
     stock_anterior = producto.stock
 
     if tipo == "COMPRA":
-        if cantidad <= 0:
+        if cant <= 0:
             print("Cantidad debe ser positiva")
             return
-        producto.stock += cantidad
+        producto.stock += cant
     elif tipo == "VENTA":
-        if cantidad <= 0:
+        if cant <= 0:
             print("Cantidad debe ser positiva")
             return
-        if cantidad > producto.stock:
+        if cant > producto.stock:
             print("Stock insuficiente")
             return
-        producto.stock -= cantidad
+        producto.stock -= cant
     else:
         print("Tipo de movimiento inválido. Use 'COMPRA' o 'VENTA'")
         return
