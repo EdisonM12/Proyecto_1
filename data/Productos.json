@@ -5,8 +5,8 @@
             "nombre": "wrrw",
             "precio": 12.0,
             "cantidad": 12,
-            "stock": 58,
-            "stock_minimo": 1,
+            "stock": 10,
+            "stock_minimo": 12,
             "categoria": {
                 "id": 1,
                 "nombre": "ajaja"
@@ -17,8 +17,8 @@
             "nombre": "qqq",
             "precio": 34.0,
             "cantidad": 23,
-            "stock": 47,
-            "stock_minimo": 1,
+            "stock": 4,
+            "stock_minimo": 7,
             "categoria": {
                 "id": 1,
                 "nombre": "wwww"
