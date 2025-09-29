@@ -1,4 +1,5 @@
 import json
+from tabulate import tabulate
 
 from models.producto import Producto
 
@@ -31,8 +32,10 @@ def listar_stock_minimo():
     # Mostrar resultados
     if list1:
         print("\nProductos con stock mínimo:")
-        for p in list1:
-            print(f"{p['nombre']} - Stock: {p['stock']} - Stock mínimo: {p['stock_minimo']}")
+        list2 = ([p['nombre'],p['stock'], p['stock_minimo']] for p in list1 )
+        encabezados = ["Nombre", "Stock", "Stock mínimo"]
+        print(tabulate(list2, headers=encabezados, tablefmt="grid"))
+
     else:
         print("\nNo hay productos con stock bajo.")
 
