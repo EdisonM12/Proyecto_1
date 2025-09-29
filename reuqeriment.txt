@@ -1,0 +1,5 @@
+ tqdm
+ rich
+ colorama
+ tabulate
+ inquirer

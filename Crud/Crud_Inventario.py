@@ -59,6 +59,7 @@ def registrar_movimiento(id_producto, tipo, cant):
     movimiento = {
         "id_mov": len(movimientos) + 1,
         "id_producto": producto.id,
+        "Tipo": tipo,
         "Categoria":{
            "id": producto.categoria.id,
            "Nombre de categoria": producto.categoria.nombre
