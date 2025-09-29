@@ -1,9 +1,11 @@
+from unicodedata import category
+from models.categoria import Categoria
 from models.producto import Producto
 from services.productos_services import ProductosServicie
 from services.proveedor_services import ProveedorServices
 
 import json
-
+import menu_inventario
 
 # Leer usuarios desde el JSON
 archivo="data/administrador.json"
@@ -55,6 +57,8 @@ def menu():
       print("=====================================")
       print( "       1. Productos")
       print( "       2. Proveedor")
+      print( "       3. Inventario")
+
 
       op = input("Escoja una opcion que desea escoger: ")
 
@@ -66,9 +70,12 @@ def menu():
         cantidad = int(input("Cantidad: "))
         stock = int(input("Stock: "))
         stock_minimo = int(input("Stock mínimo: "))
+        cat_id = int(input("id de Categoria: "))
+        cat_nombre = input("Nombre de categoria: ")
+        categoria = Categoria(cat_id, cat_nombre)
 
         try:
-            producto = servicio.crear_producto(id, nombre, precio, cantidad, stock, stock_minimo)
+            producto = servicio.crear_producto(id, nombre, precio, cantidad, stock, stock_minimo, categoria)
             print(" Producto creado:", producto)
         except ValueError as e:
             print(" Error:", e)
@@ -90,7 +97,7 @@ def menu():
             print(" Error:", e)
 
       elif op == "3":
-          return False
+          return menu_inventario.menu()
 
       else:
           print("saliendo del sistema")

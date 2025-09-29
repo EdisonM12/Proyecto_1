@@ -7,9 +7,9 @@ class ProductosServicie:
     def __init__(self):
         self.repo = ProductoRepository()
 
-    def crear_producto(self, id,nombre,precio,cant, stock ,stock_minimo):
+    def crear_producto(self, id,nombre,precio,cant, stock ,stock_minimo, categoria):
 
-        producto = Producto(id,nombre,precio,cant,stock,stock_minimo)
+        producto = Producto(id,nombre,precio,cant,stock,stock_minimo,categoria)
         Cru_producto.crear_productos(producto)
         return producto
 

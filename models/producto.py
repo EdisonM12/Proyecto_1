@@ -7,6 +7,7 @@ class Producto:
     cant: int
     stock: int
     stock_minimo: int
+    categoria: "Categoria" = None
 
     def agregar_stock(self, cantidad : int):
          if cantidad < 0:

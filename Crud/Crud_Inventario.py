@@ -1,10 +1,10 @@
 from Crud import Cru_producto
-
 import json
 import os
 from datetime import datetime
 
-KARDEX_JSON = "C:/Users/MI PC/OneDrive/Documentos/Universidad/POO/Proyecto_1/data/Kardex.json"
+KARDEX_JSON = "data/Kardex.json"
+
 
 def cargar_movimientos():
     if not os.path.exists(KARDEX_JSON) or os.path.getsize(KARDEX_JSON) == 0:
@@ -26,27 +26,27 @@ def registrar_movimiento(id_producto, tipo, cantidad):
     #Registra un movimiento de inventario (si es COMPRA o VENTA)
     #Ajusta stock del producto y lo guarda en Kardex.json
     productos = Cru_producto.cargar_datos()
-    producto = next((p for p in productos if p["id"] == id_producto), None)
+    producto = next((p for p in productos if p.id == id_producto), None)
     if not producto:
         print("Producto no encontrado")
         return
 
     tipo = tipo.upper()
-    stock_anterior = producto["stock"]
+    stock_anterior = producto.stock
 
     if tipo == "COMPRA":
         if cantidad <= 0:
             print("Cantidad debe ser positiva")
             return
-        producto["stock"] += cantidad
+        producto.stock += cantidad
     elif tipo == "VENTA":
         if cantidad <= 0:
             print("Cantidad debe ser positiva")
             return
-        if cantidad > producto["stock"]:
+        if cantidad > producto.stock:
             print("Stock insuficiente")
             return
-        producto["stock"] -= cantidad
+        producto.stock -= cantidad
     else:
         print("Tipo de movimiento inválido. Use 'COMPRA' o 'VENTA'")
         return
@@ -58,12 +58,15 @@ def registrar_movimiento(id_producto, tipo, cantidad):
     movimientos = cargar_movimientos()
     movimiento = {
         "id_mov": len(movimientos) + 1,
-        "id_producto": id_producto,
-        "tipo": tipo,
-        "cantidad": cantidad,
+        "id_producto": producto.id,
+        "Categoria":{
+           "id": producto.categoria.id,
+           "Nombre de categoria": producto.categoria.nombre
+        } ,
+        "cantidad": producto.cant,
         "fecha": datetime.now().isoformat(),
         "stock_anterior": stock_anterior,
-        "stock_nuevo": producto["stock"]
+        "stock_nuevo": producto.stock,
     }
     movimientos.append(movimiento)
     guardar_movimientos(movimientos)
@@ -89,8 +92,6 @@ def eliminar_movimiento(id_mov):
 
 
 # Registrar movimientos
-registrar_movimiento(1, "COMPRA", 10)
-registrar_movimiento(1, "VENTA", 5)
 
 # Listar todos los movimientos
 movs = listar_movimientos()

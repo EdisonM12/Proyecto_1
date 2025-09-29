@@ -1,0 +1,22 @@
+{
+    "movimientos": [
+        {
+            "id_mov": 1,
+            "id_producto": 1,
+            "tipo": "COMPRA",
+            "cantidad": 10,
+            "fecha": "2025-09-29T01:55:41.132885",
+            "stock_anterior": 33,
+            "stock_nuevo": 43
+        },
+        {
+            "id_mov": 2,
+            "id_producto": 1,
+            "tipo": "VENTA",
+            "cantidad": 5,
+            "fecha": "2025-09-29T01:55:41.161731",
+            "stock_anterior": 43,
+            "stock_nuevo": 38
+        }
+    ]
+}
