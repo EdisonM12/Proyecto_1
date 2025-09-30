@@ -32,7 +32,11 @@
 # calcular_margen_producto()
 #
 import json
-from tabulate import tabulate  # <-- importamos tabulate
+import time
+from tabulate import tabulate  #
+def esperar(mensaje: str = "", segundos: int = 3):
+    print(f"\n{mensaje}")
+    time.sleep(segundos)
 
 def calcular_margen_producto():
     try:
@@ -69,5 +73,7 @@ def calcular_margen_producto():
 
     # Imprimir la tabla con formato grid
     print (tabulate(tabla, headers=headers, tablefmt="grid"))
+    esperar("Regresando al menu anterior",5)
+
 
 

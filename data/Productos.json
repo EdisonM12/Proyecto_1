@@ -6,7 +6,7 @@
             "precio": 1.5,
             "costo": 0.5,
             "cantidad": 6,
-            "stock": 50,
+            "stock": 47,
             "stock_minimo": 10,
             "categoria": {
                 "id": 4,

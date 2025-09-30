@@ -1,25 +1,28 @@
 from Crud import Cru_producto
 from Crud import Crud_Inventario
+from Menu import esperar
 import sys
 import Menu
 # así se llamaría tu archivo con el código que me pasaste
 
 def menus():
     while True:
-        print("\n===== MENÚ INVENTARIO =====")
-        print("1. Registrar movimiento (COMPRA/VENTA)")
-        print("2. Listar movimientos")
-        print("3. Actualizar movimiento")
-        print("4. Eliminar movimiento")
-        print("5. regresar al menu anterior")
-        print("6. Salir")
+        print("╔══════════════════════════════════════════╗")
+        print("║============  MENÚ INVENTARIO  ===========║")
+        print("║  1. Registrar movimiento (COMPRA/VENTA)  ║")
+        print("║  2. Listar movimientos                   ║")
+        print("║  3. Actualizar movimiento                ║")
+        print("║  4. Eliminar movimiento                  ║")
+        print("║  5. regresar al menu anterior            ║")
+        print("║  6. Salir                                ║")
+        print("╚══════════════════════════════════════════╝")
 
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
             try:
                 id_producto = int(input("Ingrese ID del producto: "))
-                tipo = input("Tipo de movimiento (COMPRA/VENTA): ")
+                tipo = input("Tipo de movimiento (COMPRA/VENTA): ").upper()
                 cantidad = int(input("Cantidad: "))
                 Crud_Inventario.registrar_movimiento(id_producto, tipo, cantidad)
             except ValueError:
@@ -51,11 +54,12 @@ def menus():
             except ValueError:
                 print(" ID inválido.")
         elif opcion == "5":
+            esperar("Regresando al menú anterior",3)
             return Menu.menu()
 
 
         elif opcion == "6":
-            print(" Saliendo del sistema...")
+            esperar(" Saliendo del sistema...",3)
             sys.exit()
 
         else:

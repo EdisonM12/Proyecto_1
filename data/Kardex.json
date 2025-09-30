@@ -55,6 +55,19 @@
             "fecha": "2025-09-29T23:31:12.705696",
             "stock_anterior": 50,
             "stock_nuevo": 54
+        },
+        {
+            "id_mov": 6,
+            "id_producto": 1,
+            "Tipo": "VENTA",
+            "Categoria": {
+                "id": 4,
+                "Nombre de categoria": "lacteos"
+            },
+            "cantidad": 6,
+            "fecha": "2025-09-30T10:33:51.618339",
+            "stock_anterior": 50,
+            "stock_nuevo": 47
         }
     ]
 }

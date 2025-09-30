@@ -1,4 +1,8 @@
 import sys
+import time
+import os
+import platform
+from rich.console import Console
 
 from unicodedata import category
 
@@ -15,9 +19,18 @@ import menu_inventario
 archivo="data/administrador.json"
 with open(archivo, "r", encoding="utf-8") as f:
     data = json.load(f)
+console = Console()
+def limpiar_consola():
+    print("\n" * 50)
 
-def login_admin() -> None:
-    """Función para validar el login del administrador"""
+
+
+def esperar(mensaje: str = "", segundos: int = 3):
+    print(f"\n{mensaje}")
+    time.sleep(segundos)
+
+
+def login_admin() :
     username = input("Ingrese usuario: ")
     password = input("Ingrese contraseña: ")
 
@@ -26,22 +39,28 @@ def login_admin() -> None:
             menu_administrador()
             return
     print("\n Usuario o contraseña incorrectos.\n")
+    limpiar_consola()
 
 def login():
+
     while True:
-        print("=== MENÚ PRINCIPAL ===")
-        print("1. Administrador (requiere login)")
-        print("2. Cliente (acceso directo)")
-        print("3. Salir")
+        limpiar_consola()
+        print(" ╔════════════════════════════════════╗")
+        print(" ║=========  MENÚ PRINCIPAL  =========║")
+        print(" ║  1. Administrador (requiere login) ║")
+        print(" ║  2. Cliente (acceso directo)       ║")
+        print(" ║  3. Salir                          ║")
+        print(" ╚════════════════════════════════════╝")
 
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
             login_admin()
         elif opcion == "2":
+            esperar("Ingresando como cliente",3)
             menu()
         elif opcion == "3":
-            print("Saliendo del sistema....")
+            esperar("Saliendo del sistema....",3)
             sys.exit()
         else:
             print(" Opción no válida, intente nuevamente.\n")
@@ -54,21 +73,24 @@ def login():
 def menu():
     servicio = ProductosServicie()
     pro = ProveedorServices()
-
     while True:
-      print("\n=====================================")
-      print("         ELIJA UNA OPCION                ")
-      print("=====================================")
-      print( "       1. Productos")
-      print( "       2. Proveedor")
-      print( "       3. Inventario")
-      print( "       4. regresar al menu principal")
-      print( "       5. Salir")
+      limpiar_consola()
+      print("╔══════════════════════════════════════╗")
+      print("║======================================║")
+      print("║         ELIJA UNA OPCION             ║")
+      print("║======================================║")
+      print("║       1. Productos                   ║")
+      print("║       2. Proveedor                   ║")
+      print("║       3. Inventario                  ║")
+      print("║       4. regresar al menu principal  ║")
+      print("║       5. Salir                       ║")
+      print("╚══════════════════════════════════════╝")
 
 
       op = input("Escoja una opcion que desea escoger: ")
 
       if op == "1" :
+        limpiar_consola()
         print("\n--- Registrar nuevo producto ---")
         id = int(input("ID: "))
         nombre = input("Nombre: ")
@@ -89,6 +111,7 @@ def menu():
 
 
       elif op == "2":
+        limpiar_consola()
         print("\n--- Registrar nuevo proveedor ---")
         id = int(input("ID: "))
         nombre = input("Nombre: ")
@@ -104,32 +127,41 @@ def menu():
             print(" Error:", e)
 
       elif op == "3":
+          esperar("Inventario...",3)
           return menu_inventario.menus()
       elif op == "4":
+          esperar("Saliendo al menú pricipal....",3)
           return login()
 
       else:
 
-          print("saliendo del sistema")
+          esperar("saliendo del sistema", 3)
           sys.exit()
 
 def menu_administrador():
     servicio = ProductosServicie()
     pro = ProveedorServices()
+
     while True:
-        print("=== MENÚ ADMINISTRADOR ===")
-        print("1. Ver productos y calcular margen de ganancia")
-        print("2. Productos               ")
-        print("3. Proveedor               ")
-        print("4. Inventario              ")
-        print("5. volver al menu principal")
-        print("6. Salir")
+        limpiar_consola()
+
+        print("╔═════════════════════════════════════════════════╗")
+        print("║=============  MENÚ ADMINISTRADOR  ==============║")
+        print("║  1. Ver productos y calcular margen de ganancia ║")
+        print("║  2. Productos                                   ║")
+        print("║  3. Proveedor                                   ║")
+        print("║  4. Inventario                                  ║")
+        print("║  5. volver al menu principal                    ║")
+        print("║  6. Salir                                       ║")
+        print("╚═════════════════════════════════════════════════╝")
 
         op = input("Seleccione una opción: ")
 
         if op == "1":
+            esperar("Calculando margen de los prodcutos",3)
             calcular_margen_producto()
         elif op == "2":
+            limpiar_consola()
             print("\n--- Registrar nuevo producto ---")
             id = int(input("ID: "))
             nombre = input("Nombre: ")
@@ -150,6 +182,7 @@ def menu_administrador():
 
 
         elif op == "3":
+            limpiar_consola()
             print("\n--- Registrar nuevo proveedor ---")
             id = int(input("ID: "))
             nombre = input("Nombre: ")
@@ -165,12 +198,14 @@ def menu_administrador():
                 print(" Error:", e)
 
         elif op == "4":
+            esperar("Menú inventario",3)
             return menu_inventario.menus()
         elif op == "5":
+            esperar("Regresando al menú principal",3)
             return login()
 
         else:
-            print("Saliendo del sistema....")
+            esperar("Saliendo del sistema....",3)
             sys.exit()
 
 def main():
