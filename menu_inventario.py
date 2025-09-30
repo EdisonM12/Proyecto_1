@@ -3,8 +3,6 @@ from Crud import Crud_Inventario
 from Menu import esperar
 import sys
 import Menu
-# así se llamaría tu archivo con el código que me pasaste
-
 def menus():
     while True:
         print("╔══════════════════════════════════════════╗")

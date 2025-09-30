@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 from models.producto import Producto
 
+
 @dataclass
 class Categoria:
     id: int

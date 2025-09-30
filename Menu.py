@@ -8,6 +8,8 @@ from unicodedata import category
 
 from Proyecto_1.utils.margen_ganancia import calcular_margen_producto
 from models.categoria import Categoria
+
+
 from models.producto import Producto
 from services.productos_services import ProductosServicie
 from services.proveedor_services import ProveedorServices
@@ -15,16 +17,12 @@ from services.proveedor_services import ProveedorServices
 import json
 import menu_inventario
 
+
 # Leer usuarios desde el JSON
 archivo="data/administrador.json"
 with open(archivo, "r", encoding="utf-8") as f:
     data = json.load(f)
 console = Console()
-def limpiar_consola():
-    print("\n" * 50)
-
-
-
 def esperar(mensaje: str = "", segundos: int = 3):
     print(f"\n{mensaje}")
     time.sleep(segundos)
@@ -39,12 +37,12 @@ def login_admin() :
             menu_administrador()
             return
     print("\n Usuario o contraseña incorrectos.\n")
-    limpiar_consola()
+
 
 def login():
 
     while True:
-        limpiar_consola()
+
         print(" ╔════════════════════════════════════╗")
         print(" ║=========  MENÚ PRINCIPAL  =========║")
         print(" ║  1. Administrador (requiere login) ║")
@@ -74,7 +72,7 @@ def menu():
     servicio = ProductosServicie()
     pro = ProveedorServices()
     while True:
-      limpiar_consola()
+
       print("╔══════════════════════════════════════╗")
       print("║======================================║")
       print("║         ELIJA UNA OPCION             ║")
@@ -90,7 +88,7 @@ def menu():
       op = input("Escoja una opcion que desea escoger: ")
 
       if op == "1" :
-        limpiar_consola()
+
         print("\n--- Registrar nuevo producto ---")
         id = int(input("ID: "))
         nombre = input("Nombre: ")
@@ -111,7 +109,7 @@ def menu():
 
 
       elif op == "2":
-        limpiar_consola()
+
         print("\n--- Registrar nuevo proveedor ---")
         id = int(input("ID: "))
         nombre = input("Nombre: ")
@@ -143,7 +141,7 @@ def menu_administrador():
     pro = ProveedorServices()
 
     while True:
-        limpiar_consola()
+
 
         print("╔═════════════════════════════════════════════════╗")
         print("║=============  MENÚ ADMINISTRADOR  ==============║")
@@ -161,7 +159,7 @@ def menu_administrador():
             esperar("Calculando margen de los prodcutos",3)
             calcular_margen_producto()
         elif op == "2":
-            limpiar_consola()
+
             print("\n--- Registrar nuevo producto ---")
             id = int(input("ID: "))
             nombre = input("Nombre: ")
@@ -182,7 +180,7 @@ def menu_administrador():
 
 
         elif op == "3":
-            limpiar_consola()
+
             print("\n--- Registrar nuevo proveedor ---")
             id = int(input("ID: "))
             nombre = input("Nombre: ")
