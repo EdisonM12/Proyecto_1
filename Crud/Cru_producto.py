@@ -1,6 +1,7 @@
 import json
 from models.producto import  Producto
 from models.categoria import Categoria
+import os
 
 archivo= "data/Productos.json"
 
@@ -46,6 +47,9 @@ def guardar_datos(productos):
         })
     with open(archivo, "w") as f:
         json.dump({"productos": data_serializable}, f, indent=4, ensure_ascii=False)
+
+
+
 
 def crear_productos(producto):
     productos = cargar_datos()

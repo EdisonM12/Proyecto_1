@@ -2,41 +2,41 @@
     "productos": [
         {
             "id": 1,
-            "nombre": "wrrw",
-            "precio": 12.0,
-            "costo": 10.0,
-            "cantidad": 12,
-            "stock": 10,
-            "stock_minimo": 12,
+            "nombre": "leche",
+            "precio": 1.5,
+            "costo": 0.5,
+            "cantidad": 6,
+            "stock": 50,
+            "stock_minimo": 10,
             "categoria": {
-                "id": 1,
-                "nombre": "ajaja"
+                "id": 4,
+                "nombre": "lacteos"
             }
         },
         {
             "id": 2,
-            "nombre": "qqq",
-            "precio": 34.0,
-            "costo":30.0,
-            "cantidad": 23,
-            "stock": 4,
-            "stock_minimo": 7,
+            "nombre": "papa",
+            "precio": 2.3,
+            "costo": 1.5,
+            "cantidad": 30,
+            "stock": 54,
+            "stock_minimo": 20,
             "categoria": {
-                "id": 1,
-                "nombre": "wwww"
+                "id": 5,
+                "nombre": "vegetal"
             }
         },
         {
-            "id": 3,
-            "nombre": "WWW",
-            "precio": 2.0,
-            "costo": 1.5,
-            "cantidad": 12,
-            "stock": 34,
-            "stock_minimo": 45,
+            "id": 2,
+            "nombre": "llave inglesa",
+            "precio": 60.0,
+            "costo": 20.0,
+            "cantidad": 30,
+            "stock": 35,
+            "stock_minimo": 10,
             "categoria": {
-                "id": 3,
-                "nombre": "WWW"
+                "id": 6,
+                "nombre": "llaves"
             }
         }
     ]

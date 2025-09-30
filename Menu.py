@@ -89,7 +89,7 @@ def menu():
 
 
       elif op == "2":
-        print("\n--- Registrar nuevo producto ---")
+        print("\n--- Registrar nuevo proveedor ---")
         id = int(input("ID: "))
         nombre = input("Nombre: ")
         cedula = int(input("Cedula: "))
@@ -104,7 +104,7 @@ def menu():
             print(" Error:", e)
 
       elif op == "3":
-          return menu_inventario.menu()
+          return menu_inventario.menus()
       elif op == "4":
           return login()
 
@@ -150,7 +150,7 @@ def menu_administrador():
 
 
         elif op == "3":
-            print("\n--- Registrar nuevo producto ---")
+            print("\n--- Registrar nuevo proveedor ---")
             id = int(input("ID: "))
             nombre = input("Nombre: ")
             cedula = int(input("Cedula: "))
@@ -165,7 +165,7 @@ def menu_administrador():
                 print(" Error:", e)
 
         elif op == "4":
-            return menu_inventario.menu()
+            return menu_inventario.menus()
         elif op == "5":
             return login()
 

@@ -29,6 +29,32 @@
             "fecha": "2025-09-29T03:12:53.799130",
             "stock_anterior": 45,
             "stock_nuevo": 47
+        },
+        {
+            "id_mov": 4,
+            "id_producto": 1,
+            "Tipo": "COMPRA",
+            "Categoria": {
+                "id": 4,
+                "Nombre de categoria": "lacteos"
+            },
+            "cantidad": 6,
+            "fecha": "2025-09-29T22:54:29.099032",
+            "stock_anterior": 30,
+            "stock_nuevo": 50
+        },
+        {
+            "id_mov": 5,
+            "id_producto": 2,
+            "Tipo": "COMPRA",
+            "Categoria": {
+                "id": 5,
+                "Nombre de categoria": "vegetal"
+            },
+            "cantidad": 30,
+            "fecha": "2025-09-29T23:31:12.705696",
+            "stock_anterior": 50,
+            "stock_nuevo": 54
         }
     ]
 }
