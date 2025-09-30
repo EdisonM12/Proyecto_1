@@ -95,9 +95,9 @@ def eliminar_movimiento(id_mov):
 # Registrar movimientos
 
 # Listar todos los movimientos
-movs = listar_movimientos()
-for m in movs:
-    print(m)
+# movs = listar_movimientos()
+# for m in movs:
+#     print(m)
 
 # Actualizar un movimiento (opcional)
 #actualizar_movimiento(1, cantidad=15)

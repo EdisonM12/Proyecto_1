@@ -1,7 +1,5 @@
 import json
-
-from models import categoria
-from models.producto import Producto
+from models.producto import  Producto
 from models.categoria import Categoria
 
 archivo= "data/Productos.json"
@@ -19,6 +17,7 @@ def cargar_datos():
                     id=p["id"],
                     nombre=p["nombre"],
                     precio=p["precio"],
+                    costo=p["costo"],
                     cant=p["cantidad"],
                     stock=p["stock"],
                     stock_minimo=p["stock_minimo"],
@@ -36,6 +35,7 @@ def guardar_datos(productos):
             "id": p.id,
              "nombre": p.nombre,
              "precio": p.precio,
+             "costo": p.costo,
              "cantidad": p.cant,
              "stock": p.stock,
             "stock_minimo": p.stock_minimo,
@@ -56,12 +56,13 @@ def obtener_productos():
     return cargar_datos()
 
 
-def actualizar_productos(id, nombre= None, precio=None, cant=None, stock=None, stock_minimo=None, categoria=None ):
+def actualizar_productos(id, nombre= None, precio=None, cant=None, costo= None,stock=None, stock_minimo=None, categoria=None ):
     productos = cargar_datos()
     for p in productos:
      if p.id == id:
         if nombre: p.nombre = nombre
         if precio: p.precio = precio
+        if costo:p.costo=costo
         if cant: p.cant = cant
         if stock: p.stock = stock
         if stock_minimo: p.stock_minimo = stock_minimo

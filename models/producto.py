@@ -4,6 +4,7 @@ class Producto:
     id: int
     nombre: str
     precio: int
+    costo: int
     cant: int
     stock: int
     stock_minimo: int
