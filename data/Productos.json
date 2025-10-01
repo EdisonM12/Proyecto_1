@@ -90,6 +90,19 @@
                 "id": 45,
                 "nombre": "tornillos"
             }
+        },
+        {
+            "id": 74,
+            "nombre": "taladro",
+            "precio": 65.0,
+            "costo": 35.0,
+            "cantidad": 60,
+            "stock": 50,
+            "stock_minimo": 20,
+            "categoria": {
+                "id": 7,
+                "nombre": "taladros"
+            }
         }
     ]
 }
