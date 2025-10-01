@@ -38,6 +38,32 @@
                 "id": 6,
                 "nombre": "llaves"
             }
+        },
+        {
+            "id": 6,
+            "nombre": "pala",
+            "precio": 60.0,
+            "costo": 30.0,
+            "cantidad": 30,
+            "stock": 50,
+            "stock_minimo": 20,
+            "categoria": {
+                "id": 9,
+                "nombre": "palas"
+            }
+        },
+        {
+            "id": 5,
+            "nombre": "llave",
+            "precio": 30.0,
+            "costo": 15.0,
+            "cantidad": 60,
+            "stock": 77,
+            "stock_minimo": 20,
+            "categoria": {
+                "id": 4,
+                "nombre": "llaves"
+            }
         }
     ]
 }

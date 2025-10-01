@@ -1,12 +1,12 @@
 {
     "proveedor": [
         {
-            "id": 2,
-            "nombre": "qqqqq",
-            "cedula": 1234567890,
-            "telefono": 1234567890,
-            "direccion": "la troncal",
-            "empresa": "aaaa"
+            "id": 1,
+            "nombre": "1",
+            "cedula": 1,
+            "telefono": 1,
+            "direccion": "1",
+            "empresa": "41"
         }
     ]
 }
