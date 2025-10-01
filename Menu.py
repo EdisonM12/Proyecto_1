@@ -3,31 +3,42 @@ import time
 import os
 import platform
 from rich.console import Console
-
 from unicodedata import category
-
 from Proyecto_1.utils.margen_ganancia import calcular_margen_producto
 from models.categoria import Categoria
-
-
 from models.producto import Producto
 from services.productos_services import ProductosServicie
 from services.proveedor_services import ProveedorServices
-
 import json
 import menu_inventario
 
-
-archivo="data/administrador.json"
+archivo = "data/administrador.json"
 with open(archivo, "r", encoding="utf-8") as f:
     data = json.load(f)
+
 console = Console()
+
 def esperar(mensaje: str = "", segundos: int = 3):
     print(f"\n{mensaje}")
     time.sleep(segundos)
 
+def pedir_entero(mensaje: str) -> int:
+    while True:
+        try:
+            valor = int(input(mensaje))
+            return valor
+        except ValueError:
+            print(" Entrada inválida. Debe ser un número entero.")
 
-def login_admin() :
+def pedir_flotante(mensaje: str) -> float:
+    while True:
+        try:
+            valor = float(input(mensaje))
+            return valor
+        except ValueError:
+            print(" Entrada inválida. Debe ser un número.")
+
+def login_admin():
     username = input("Ingrese usuario: ")
     password = input("Ingrese contraseña: ")
 
@@ -37,11 +48,8 @@ def login_admin() :
             return
     print("\n Usuario o contraseña incorrectos.\n")
 
-
 def login():
-
     while True:
-
         print(" ╔════════════════════════════════════╗")
         print(" ║=========  MENÚ PRINCIPAL  =========║")
         print(" ║  1. Administrador (requiere login) ║")
@@ -62,86 +70,71 @@ def login():
         else:
             print(" Opción no válida, intente nuevamente.\n")
 
-
-
-
-
-
 def menu():
     servicio = ProductosServicie()
     pro = ProveedorServices()
     while True:
+        print("╔══════════════════════════════════════╗")
+        print("║======================================║")
+        print("║         ELIJA UNA OPCION             ║")
+        print("║======================================║")
+        print("║       1. Productos                   ║")
+        print("║       2. Proveedor                   ║")
+        print("║       3. Inventario                  ║")
+        print("║       4. regresar al menu principal  ║")
+        print("║       5. Salir                       ║")
+        print("╚══════════════════════════════════════╝")
 
-      print("╔══════════════════════════════════════╗")
-      print("║======================================║")
-      print("║         ELIJA UNA OPCION             ║")
-      print("║======================================║")
-      print("║       1. Productos                   ║")
-      print("║       2. Proveedor                   ║")
-      print("║       3. Inventario                  ║")
-      print("║       4. regresar al menu principal  ║")
-      print("║       5. Salir                       ║")
-      print("╚══════════════════════════════════════╝")
+        op = input("Escoja una opcion que desea escoger: ")
 
+        if op == "1":
+            print("\n--- Registrar nuevo producto ---")
+            id = pedir_entero("ID: ")
+            nombre = input("Nombre: ")
+            precio = pedir_flotante("Precio: ")
+            costo = pedir_flotante("Costo: ")
+            cantidad = pedir_entero("Cantidad: ")
+            stock = pedir_entero("Stock: ")
+            stock_minimo = pedir_entero("Stock mínimo: ")
+            cat_id = pedir_entero("ID de Categoria: ")
+            cat_nombre = input("Nombre de categoria: ")
+            categoria = Categoria(cat_id, cat_nombre)
 
-      op = input("Escoja una opcion que desea escoger: ")
+            try:
+                producto = servicio.crear_producto(id, nombre, precio, costo, cantidad, stock, stock_minimo, categoria)
+                print(" Producto creado:", producto)
+            except ValueError as e:
+                print(" Error:", e)
 
-      if op == "1" :
+        elif op == "2":
+            print("\n--- Registrar nuevo proveedor ---")
+            id = pedir_entero("ID: ")
+            nombre = input("Nombre: ")
+            cedula = pedir_entero("Cédula: ")
+            telefono = pedir_entero("Teléfono: ")
+            direccion = input("Direccion: ")
+            empresa = input("Empresa: ")
 
-        print("\n--- Registrar nuevo producto ---")
-        id = int(input("ID: "))
-        nombre = input("Nombre: ")
-        precio = float(input("Precio: "))
-        costo = float(input("Costo: "))
-        cantidad = int(input("Cantidad: "))
-        stock = int(input("Stock: "))
-        stock_minimo = int(input("Stock mínimo: "))
-        cat_id = int(input("id de Categoria: "))
-        cat_nombre = input("Nombre de categoria: ")
-        categoria = Categoria(cat_id, cat_nombre)
+            try:
+                proveedor1 = pro.crear_proveedor(id, nombre, cedula, telefono, direccion, empresa)
+                print(f"Proveedor agregado {proveedor1}")
+            except ValueError as e:
+                print(" Error:", e)
 
-        try:
-            producto = servicio.crear_producto(id, nombre, precio,costo, cantidad, stock, stock_minimo, categoria)
-            print(" Producto creado:", producto)
-        except ValueError as e:
-            print(" Error:", e)
-
-
-      elif op == "2":
-
-        print("\n--- Registrar nuevo proveedor ---")
-        id = int(input("ID: "))
-        nombre = input("Nombre: ")
-        cedula = int(input("Cedula: "))
-        telefono = int(input("Telefono: "))
-        direccion = input("Direccion: ")
-        empresa = input("Empresa: ")
-
-        try:
-             proveedor1 = pro.crear_proveedor(id, nombre, cedula, telefono, direccion, empresa)
-             print(f"Proveedor agregado {proveedor1}")
-        except ValueError as e:
-            print(" Error:", e)
-
-      elif op == "3":
-          esperar("Inventario...",3)
-          return menu_inventario.menus()
-      elif op == "4":
-          esperar("Saliendo al menú pricipal....",3)
-          return login()
-
-      else:
-
-          esperar("saliendo del sistema", 3)
-          sys.exit()
+        elif op == "3":
+            esperar("Inventario...",3)
+            return menu_inventario.menus()
+        elif op == "4":
+            esperar("Saliendo al menú pricipal....",3)
+            return login()
+        else:
+            esperar("saliendo del sistema", 3)
+            sys.exit()
 
 def menu_administrador():
     servicio = ProductosServicie()
     pro = ProveedorServices()
-
     while True:
-
-
         print("╔═════════════════════════════════════════════════╗")
         print("║=============  MENÚ ADMINISTRADOR  ==============║")
         print("║  1. Ver productos y calcular margen de ganancia ║")
@@ -155,36 +148,33 @@ def menu_administrador():
         op = input("Seleccione una opción: ")
 
         if op == "1":
-            esperar("Calculando margen de los prodcutos",3)
+            esperar("Calculando margen de los productos",3)
             calcular_margen_producto()
         elif op == "2":
-
             print("\n--- Registrar nuevo producto ---")
-            id = int(input("ID: "))
+            id = pedir_entero("ID: ")
             nombre = input("Nombre: ")
-            precio = float(input("Precio: "))
-            costo = float(input("Costo: "))
-            cantidad = int(input("Cantidad: "))
-            stock = int(input("Stock: "))
-            stock_minimo = int(input("Stock mínimo: "))
-            cat_id = int(input("id de Categoria: "))
+            precio = pedir_flotante("Precio: ")
+            costo = pedir_flotante("Costo: ")
+            cantidad = pedir_entero("Cantidad: ")
+            stock = pedir_entero("Stock: ")
+            stock_minimo = pedir_entero("Stock mínimo: ")
+            cat_id = pedir_entero("ID de Categoria: ")
             cat_nombre = input("Nombre de categoria: ")
             categoria = Categoria(cat_id, cat_nombre)
 
             try:
-                producto = servicio.crear_producto(id, nombre, precio,costo, cantidad, stock, stock_minimo, categoria)
+                producto = servicio.crear_producto(id, nombre, precio, costo, cantidad, stock, stock_minimo, categoria)
                 print(" Producto creado:", producto)
             except ValueError as e:
                 print(" Error:", e)
 
-
         elif op == "3":
-
             print("\n--- Registrar nuevo proveedor ---")
-            id = int(input("ID: "))
+            id = pedir_entero("ID: ")
             nombre = input("Nombre: ")
-            cedula = int(input("Cedula: "))
-            telefono = int(input("Telefono: "))
+            cedula = pedir_entero("Cédula: ")
+            telefono = pedir_entero("Teléfono: ")
             direccion = input("Direccion: ")
             empresa = input("Empresa: ")
 
@@ -200,7 +190,6 @@ def menu_administrador():
         elif op == "5":
             esperar("Regresando al menú principal",3)
             return login()
-
         else:
             esperar("Saliendo del sistema....",3)
             sys.exit()
@@ -208,10 +197,6 @@ def menu_administrador():
 def main():
     while True:
         login()
+
 if __name__ == "__main__":
     main()
-
-
-
-
-

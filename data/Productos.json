@@ -64,6 +64,32 @@
                 "id": 4,
                 "nombre": "llaves"
             }
+        },
+        {
+            "id": 65,
+            "nombre": "destornillador",
+            "precio": 65.0,
+            "costo": 35.0,
+            "cantidad": 70,
+            "stock": 30,
+            "stock_minimo": 10,
+            "categoria": {
+                "id": 35,
+                "nombre": "herramienta"
+            }
+        },
+        {
+            "id": 14,
+            "nombre": "tornillo",
+            "precio": 36.0,
+            "costo": 25.0,
+            "cantidad": 36,
+            "stock": 80,
+            "stock_minimo": 15,
+            "categoria": {
+                "id": 45,
+                "nombre": "tornillos"
+            }
         }
     ]
 }
