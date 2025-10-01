@@ -8,10 +8,10 @@ archivo= "data/Proveedores.json"
 
 def cargar_datos():
     if not os.path.exists(archivo) or os.path.getsize(archivo) == 0:
-        # Si no existe o está vacío, devolvemos lista vacía
+
         return []
     try:
-        with open(archivo, "r") as f: #abrir el archivo para cargar los datos
+        with open(archivo, "r") as f:
             data = json.load(f)
             return [Proveedor(**p) for p in data.get("preveedor", [])]
     except FileNotFoundError:

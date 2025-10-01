@@ -6,7 +6,7 @@ archivo = r"C:\Users\Edison\Desktop\Proyecto_Poo\Proyecto_1\data\Productos.json"
 
 
 def alerta_de_stock_minimo():
-    """Muestra un mensaje de alerta para productos con stock bajo"""
+
     with open(archivo, "r", encoding="utf-8") as f:
         data = json.load(f)
     productos = data["productos"]
@@ -16,19 +16,18 @@ def alerta_de_stock_minimo():
 
 
 def listar_stock_minimo():
-    """Lista productos con stock menor o igual al mínimo y los ordena por stock"""
+
     list1 = []
 
     with open(archivo, "r", encoding="utf-8") as f:
         data = json.load(f)
     productos = data["productos"]
-    # Filtrar productos
+
     list1 = [p for p in productos if p["stock"] <= p["stock_minimo"]]
 
-    # Ordenar por stock de menor a mayor
     list1.sort(key=lambda x: x["stock"])
 
-    # Mostrar resultados
+
     if list1:
         print("\nProductos con stock mínimo:")
     else:
@@ -57,5 +56,5 @@ def menu():
             print("Opción no válida. Intenta de nuevo.")
 
 
-# Ejecutar menú
+
 menu()

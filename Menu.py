@@ -18,7 +18,6 @@ import json
 import menu_inventario
 
 
-# Leer usuarios desde el JSON
 archivo="data/administrador.json"
 with open(archivo, "r", encoding="utf-8") as f:
     data = json.load(f)

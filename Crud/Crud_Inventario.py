@@ -23,8 +23,6 @@ def guardar_movimientos(movimientos):
 
 #
 def registrar_movimiento(id_producto, tipo, cant):
-    #Registra un movimiento de inventario (si es COMPRA o VENTA)
-    #Ajusta stock del producto y lo guarda en Kardex.json
     productos = Cru_producto.cargar_datos()
     producto = next((p for p in productos if p.id == id_producto), None)
     if not producto:
@@ -51,10 +49,10 @@ def registrar_movimiento(id_producto, tipo, cant):
         print("Tipo de movimiento inválido. Use 'COMPRA' o 'VENTA'")
         return
 
-    # Guardar producto actualizado
+
     Cru_producto.guardar_datos(productos)
 
-    # Crear registro en kardex
+
     movimientos = cargar_movimientos()
     movimiento = {
         "id_mov": len(movimientos) + 1,
@@ -92,15 +90,4 @@ def eliminar_movimiento(id_mov):
     print(f"Movimiento {id_mov} eliminado")
 
 
-# Registrar movimientos
 
-# Listar todos los movimientos
-# movs = listar_movimientos()
-# for m in movs:
-#     print(m)
-
-# Actualizar un movimiento (opcional)
-#actualizar_movimiento(1, cantidad=15)
-
-# Eliminar un movimiento
-#eliminar_movimiento(2)
