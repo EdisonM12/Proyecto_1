@@ -71,7 +71,7 @@ from Crud import Crud_Inventario
 import time
 from utils.top_por_ingresos import top_productos_por_ingresos
 import sys
-import app
+from utils.validacion import pedir_entero, pedir_flotante
 def esperar(mensaje: str = "", segundos: int = 3):
     print(f"\n{mensaje}")
     time.sleep(segundos)

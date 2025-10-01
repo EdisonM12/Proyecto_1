@@ -103,6 +103,19 @@
                 "id": 7,
                 "nombre": "taladros"
             }
+        },
+        {
+            "id": 2,
+            "nombre": "qqq",
+            "precio": 12.0,
+            "costo": 32.0,
+            "cantidad": 34,
+            "stock": 54,
+            "stock_minimo": 2,
+            "categoria": {
+                "id": 1,
+                "nombre": "qq"
+            }
         }
     ]
 }

@@ -16,8 +16,8 @@ class ProductosServicie:
     def lsitar_producto(self):
         return Cru_producto.obtener_productos()
 
-    def actualizar_producto(self, id, nombre = None,precio = None,costo=None,cant = None,stock = None,stock_minimo = None):
-        Cru_producto.actualizar_productos(id, nombre, precio,costo, cant, stock, stock_minimo)
+    def actualizar_producto(self, id, nombre = None,precio = None,costo=None,cant = None,stock = None,stock_minimo = None, categoria= None):
+        Cru_producto.actualizar_productos(id, nombre, precio,costo, cant, stock, stock_minimo, categoria= None)
 
     def eliminar_producto(self,id):
         Cru_producto.eliminar_productos(id)
