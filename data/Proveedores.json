@@ -1,20 +1,20 @@
 {
     "proveedor": [
         {
-            "nombre": "gagaga",
-            "cedula": 1234567890,
-            "telefono": 1234567890,
-            "direccion": "la troncal",
-            "empresa": "Agroazucar",
-            "id": 1
+            "nombre": "qqq",
+            "cedula": 1234567898,
+            "telefono": 9876543213,
+            "direccion": "ttt",
+            "empresa": "ggggg",
+            "id": 15
         },
         {
-            "nombre": "anan",
-            "cedula": 1234567890,
-            "telefono": 981874087,
-            "direccion": "la troncal",
-            "empresa": "kaka",
-            "id": 2
+            "nombre": "rrr",
+            "cedula": 7574635421,
+            "telefono": 7676767678,
+            "direccion": "yyy",
+            "empresa": "ijsa",
+            "id": 16
         }
     ]
 }

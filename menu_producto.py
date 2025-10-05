@@ -1,16 +1,5 @@
-import sys
-import time
-import os
-import platform
-from rich.console import Console
-from unicodedata import category
-from utils.margen_ganancia import calcular_margen_producto
 from models.categoria import Categoria
-from models.producto import Producto
 from services.productos_services import ProductosServicie
-from services.proveedor_services import ProveedorServices
-import json
-import menu_inventario
 from utils.validacion import pedir_flotante, pedir_entero
 
 

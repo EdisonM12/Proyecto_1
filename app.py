@@ -156,7 +156,7 @@ def menu_administrador():
             menu_inventario.menus()
         elif op == "5":
             esperar(" Regresando al menú principal...", 2)
-            return
+            login()
         elif op == "6":
             esperar(" Saliendo del sistema....", 2)
             limpiar_pantalla()

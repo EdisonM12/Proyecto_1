@@ -219,30 +219,45 @@
         },
         {
             "id_mov": 17,
-            "tipo": "COMPRA",
-            "fecha": "2025-10-05T15:21:15.226516",
+            "tipo": "VENTA",
+            "fecha": "2025-10-05T18:47:34.187418",
             "productos": [
                 {
-                    "id_producto": 2,
-                    "nombre": "papa",
-                    "cantidad": 20,
-                    "stock_anterior": 54,
-                    "stock_nuevo": 74
+                    "id_producto": 11,
+                    "nombre": "abrazadera",
+                    "cantidad": 2,
+                    "stock_anterior": 60,
+                    "stock_nuevo": 58
                 }
             ],
-            "cantidad_total": 20
+            "cantidad_total": 2
         },
         {
             "id_mov": 18,
-            "tipo": "COMPRA",
-            "fecha": "2025-10-05T16:19:35.733004",
+            "tipo": "VENTA",
+            "fecha": "2025-10-05T18:47:34.190844",
+            "productos": [
+                {
+                    "id_producto": 10,
+                    "nombre": "qqwwqwqw",
+                    "cantidad": 3,
+                    "stock_anterior": 23,
+                    "stock_nuevo": 20
+                }
+            ],
+            "cantidad_total": 3
+        },
+        {
+            "id_mov": 19,
+            "tipo": "VENTA",
+            "fecha": "2025-10-05T18:47:34.192273",
             "productos": [
                 {
                     "id_producto": 1,
                     "nombre": "leche",
                     "cantidad": 1,
-                    "stock_anterior": 48,
-                    "stock_nuevo": 49
+                    "stock_anterior": 49,
+                    "stock_nuevo": 48
                 }
             ],
             "cantidad_total": 1

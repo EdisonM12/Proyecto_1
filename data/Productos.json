@@ -5,7 +5,7 @@
             "nombre": "leche",
             "precio": 1.5,
             "costo": 0.5,
-            "stock": 49,
+            "stock": 48,
             "stock_minimo": 10,
             "categoria": {
                 "id": 0,
@@ -113,7 +113,7 @@
             "nombre": "qqwwqwqw",
             "precio": 12.0,
             "costo": 13.0,
-            "stock": 23,
+            "stock": 20,
             "stock_minimo": 1,
             "categoria": {
                 "id": 0,
@@ -122,26 +122,14 @@
         },
         {
             "id": 11,
-            "nombre": "qqwqw",
-            "precio": 12.0,
-            "costo": 32.0,
-            "stock": 24,
-            "stock_minimo": 2,
+            "nombre": "abrazadera",
+            "precio": 0.8,
+            "costo": 0.4,
+            "stock": 58,
+            "stock_minimo": 5,
             "categoria": {
-                "id": 0,
-                "nombre": "ssas"
-            }
-        },
-        {
-            "id": 12,
-            "nombre": "qqwq",
-            "precio": 23.0,
-            "costo": 21.0,
-            "stock": 43,
-            "stock_minimo": 2,
-            "categoria": {
-                "id": 1,
-                "nombre": "aa"
+                "id": 27,
+                "nombre": 1
             }
         }
     ]
