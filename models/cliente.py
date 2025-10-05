@@ -2,12 +2,17 @@ from dataclasses import dataclass
 from models.compra import Compra
 @dataclass
 class Cliente:
-    id = int
+    id = 0
     nombre = str
     apellido = str
     telefono = int
     cedula = int
     direccion = str
+
+    def __init__(self):
+        super().__init__()
+        Cliente.id += 1
+        self.id = Cliente.id
 
     def presentar(self):
         return f"{self.nombre} {self.apellido}"

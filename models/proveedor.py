@@ -1,16 +1,20 @@
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, field
 
 @dataclass
 class Proveedor:
-    id: int
     nombre: str
     cedula: int
     telefono: int
     direccion: str
     empresa: str
+    id: int = field(init=False)
+    id_contador = 0
 
+    def __post_init__(self):
+        type(self).id_contador += 1
+        self.id = type(self).id_contador
 
-    def validadcion(self):
+    def validacion(self):
         if not self.nombre or not self.empresa:
             return False
         return True
@@ -21,13 +25,14 @@ class Proveedor:
         return True
 
     def to_dict(self) -> dict:
-
         return asdict(self)
 
     @classmethod
     def from_dict(cls, data: dict):
-
-        return cls(**data)
-
-
-
+        # Creamos el objeto sin pasar 'id'
+        obj = cls(**{k: v for k, v in data.items() if k != "id"})
+        # Asignamos el ID después
+        obj.id = data.get("id", obj.id)
+        # Actualizamos el contador
+        cls.id_contador = max(cls.id_contador, obj.id)
+        return obj

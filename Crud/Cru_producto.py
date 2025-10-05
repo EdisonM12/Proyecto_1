@@ -13,9 +13,12 @@ def cargar_datos():
             for p in data.get("productos", []):
                 cat = None
                 if p.get("categoria"):
-                    cat = Categoria(id=p["categoria"]["id"], nombre=p["categoria"]["nombre"])
+                    cat = Categoria(nombre=p["categoria"]["nombre"])
+                    # Asignamos el id de la categoría y actualizamos el contador
+                    cat.id = p["categoria"].get("id", 0)
+                    Categoria.id_cat = max(Categoria.id_cat, cat.id)
+
                 producto = Producto(
-                    id=p["id"],
                     nombre=p["nombre"],
                     precio=p["precio"],
                     costo=p["costo"],
@@ -24,16 +27,21 @@ def cargar_datos():
                     stock_minimo=p["stock_minimo"],
                     categoria=cat
                 )
+                # Asignamos el id del producto y actualizamos el contador
+                producto.id = p.get("id", 0)
+                Producto.id_contador = max(Producto.id_contador, producto.id)
+
                 productos.append(producto)
             return productos
     except FileNotFoundError:
         return []
 
+
 def guardar_datos(productos):
     data_serializable = []
     for p in productos:
         data_serializable.append({
-            "id": p.id,
+             "id": p.id,
              "nombre": p.nombre,
              "precio": p.precio,
              "costo": p.costo,
@@ -41,7 +49,7 @@ def guardar_datos(productos):
              "stock": p.stock,
             "stock_minimo": p.stock_minimo,
              "categoria": {
-                      "id": p.categoria.id,
+                        "id": p.categoria.id,
                         "nombre": p.categoria.nombre
                       } if p.categoria else None
         })

@@ -28,18 +28,16 @@ def mostrar_menu_admin():
 
         if opcion == "1":
             print("\n--- Registrar nuevo producto ---")
-            id = pedir_entero("ID: ")
             nombre = input("Nombre: ")
             precio = pedir_flotante("Precio: ")
             costo = pedir_flotante("Costo: ")
             cantidad = pedir_entero("Cantidad: ")
             stock = pedir_entero("Stock: ")
             stock_minimo = pedir_entero("Stock mínimo: ")
-            cat_id = pedir_entero("ID de Categoria: ")
             cat_nombre = input("Nombre de categoria: ")
-            categoria = Categoria(cat_id, cat_nombre)
+            categoria = Categoria( cat_nombre)
             try:
-                producto = servicio.crear_producto(id, nombre, precio, costo, cantidad, stock, stock_minimo, categoria)
+                producto = servicio.crear_producto( nombre, precio, costo, cantidad, stock, stock_minimo, categoria)
                 print(" Producto creado:", producto)
             except ValueError as e:
                 print(" Error:", e)
@@ -56,7 +54,6 @@ def mostrar_menu_admin():
 
         elif opcion == "3":
             print("\n--- Registrar nuevo producto ---")
-            id = pedir_entero("ID: ")
             nombre = input("Nombre: ")
             precio = pedir_flotante("Precio: ")
             costo = pedir_flotante("Costo: ")
@@ -68,7 +65,7 @@ def mostrar_menu_admin():
 
             categoria = Categoria(cat_id, cat_nombre)
 
-            producto3 = servicio.actualizar_producto(id,nombre,precio,costo, cantidad, stock, stock_minimo, categoria)
+            producto3 = servicio.actualizar_producto(nombre,precio,costo, cantidad, stock, stock_minimo, categoria)
 
             print(" Producto actualizado:", producto3)
 

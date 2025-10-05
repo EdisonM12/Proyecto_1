@@ -4,10 +4,16 @@ from models.producto import Producto
 
 @dataclass
 class Categoria:
-    id: int
     nombre: str
     activo: bool = True
     productos: list["Producto"]= field(default_factory=list)
+    id: int = field( init = False)
+    id_cat = 0
+
+    def __post_init__(self):
+        # Incrementa el contador y asigna el id
+        type(self).id_cat += 1
+        self.id = type(self).id_cat
 
     def agregar_producto(self, producto: "Producto"):
         if producto not in self.productos:

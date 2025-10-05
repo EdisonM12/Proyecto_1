@@ -6,16 +6,16 @@ class ProveedorServices:
     def __init__(self):
         self.repo = ProveedorRepository()
 
-    def crear_proveedor(self, id, nombre, cedula,telefono, direccion, empresa):
-        proveedor = Proveedor(id, nombre, cedula, telefono, direccion, empresa)
+    def crear_proveedor(self,  nombre, cedula,telefono, direccion, empresa):
+        proveedor = Proveedor( nombre, cedula, telefono, direccion, empresa)
         Crud_proveedor.crear_proveedor(proveedor)
         return proveedor
 
     def listar_proveedor(self):
         return Crud_proveedor.obtener_proveedor()
 
-    def actualizar_proveedor(self, id= None , precio= None, cant= None, telefono= None, direccion= None, empresa= None):
-        Crud_proveedor.actualizar_proveedor(id, precio, cant, telefono, direccion, empresa)
+    def actualizar_proveedor(self, nombre= None, cedula= None , telefono= None, direccion= None, empresa= None):
+        Crud_proveedor.actualizar_proveedor(id, nombre, cedula, telefono, direccion, empresa)
 
     def eliminar_proveedor(self, id):
         Crud_proveedor.eliminar_productos(id)

@@ -13,7 +13,7 @@ import json
 import menu_inventario
 from menu_producto import mostrar_menu_admin as menu_admin_producto
 from menu_proveedor import mostrar_menu_admin as menu_admin_proveedor
-from utils.funciones_Cliente import menu_compra
+from utils.funciones_Cliente import mostrar_prod
 from utils.validacion import pedir_entero, pedir_flotante
 
 archivo = "data/administrador.json"
@@ -108,11 +108,10 @@ def menu_cliente():
         op = input("Escoja una opción: ").strip()
 
         if op == "1":
-            menu_compra()
+            mostrar_prod()
         elif op == "2":
             limpiar_pantalla()
             print("\n--- Registrar nuevo proveedor ---")
-            id = pedir_entero("ID: ")
             nombre = input("Nombre: ")
             cedula = pedir_entero("Cédula: ")
             telefono = pedir_entero("Teléfono: ")
@@ -120,7 +119,7 @@ def menu_cliente():
             empresa = input("Empresa: ")
 
             try:
-                proveedor1 = pro.crear_proveedor(id, nombre, cedula, telefono, direccion, empresa)
+                proveedor1 = pro.crear_proveedor( nombre, cedula, telefono, direccion, empresa)
                 print(f"✅ Proveedor agregado: {proveedor1}")
                 esperar("", 2)
             except ValueError as e:
@@ -189,7 +188,7 @@ def menu_administrador():
 def main():
     """Función principal que inicia el programa"""
     try:
-        login()  # Inicia con el menú principal
+        login()
     except KeyboardInterrupt:
         print("\n\n👋 Programa interrumpido por el usuario")
         sys.exit(0)

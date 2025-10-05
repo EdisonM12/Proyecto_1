@@ -69,7 +69,8 @@
 from Crud import Cru_producto
 from Crud import Crud_Inventario
 import time
-from utils.top_por_ingresos import top_productos_por_ingresos
+import app
+from utils.top_por_ingresos import top_por_ingresos
 import sys
 from utils.validacion import pedir_entero, pedir_flotante
 def esperar(mensaje: str = "", segundos: int = 3):
@@ -127,9 +128,9 @@ def menus():
                 print(" ID inválido.")
         elif opcion == "5":
             esperar("Regresando al menú anterior",3)
-            return app.menu()
+            return app.login()
         elif opcion == "6":
-            top_productos_por_ingresos()  # llamada a la función del ranking
+            top_por_ingresos()  # llamada a la función del ranking
         elif opcion == "7":
             esperar(" Saliendo del sistema...",3)
             sys.exit()

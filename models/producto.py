@@ -1,10 +1,10 @@
 
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, field
+
 from typing import Optional
 
 @dataclass
 class Producto:
-    id: int
     nombre: str
     precio: int
     costo: int
@@ -12,6 +12,14 @@ class Producto:
     stock: int
     stock_minimo: int
     categoria: "Categoria" = None
+    id: int = field( init = False)
+
+    id_contador = 0
+
+    def __post_init__(self):
+        # Incrementa el contador y asigna el id
+        type(self).id_contador += 1
+        self.id = type(self).id_contador
 
     def agregar_stock(self, cantidad: int):
         if cantidad < 0:

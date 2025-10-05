@@ -1,20 +1,20 @@
 {
     "productos": [
         {
-            "id": 1,
+            "id": 0,
             "nombre": "leche",
             "precio": 1.5,
             "costo": 0.5,
             "cantidad": 6,
-            "stock": 47,
+            "stock": 48,
             "stock_minimo": 10,
             "categoria": {
-                "id": 4,
+                "id": 0,
                 "nombre": "lacteos"
             }
         },
         {
-            "id": 2,
+            "id": 0,
             "nombre": "papa",
             "precio": 2.3,
             "costo": 1.5,
@@ -22,12 +22,12 @@
             "stock": 54,
             "stock_minimo": 20,
             "categoria": {
-                "id": 5,
+                "id": 0,
                 "nombre": "vegetal"
             }
         },
         {
-            "id": 2,
+            "id": 0,
             "nombre": "llave inglesa",
             "precio": 60.0,
             "costo": 20.0,
@@ -35,12 +35,12 @@
             "stock": 35,
             "stock_minimo": 10,
             "categoria": {
-                "id": 6,
+                "id": 0,
                 "nombre": "llaves"
             }
         },
         {
-            "id": 6,
+            "id": 0,
             "nombre": "pala",
             "precio": 60.0,
             "costo": 30.0,
@@ -48,12 +48,12 @@
             "stock": 50,
             "stock_minimo": 20,
             "categoria": {
-                "id": 9,
+                "id": 0,
                 "nombre": "palas"
             }
         },
         {
-            "id": 5,
+            "id": 0,
             "nombre": "llave",
             "precio": 30.0,
             "costo": 15.0,
@@ -61,12 +61,12 @@
             "stock": 77,
             "stock_minimo": 20,
             "categoria": {
-                "id": 4,
+                "id": 0,
                 "nombre": "llaves"
             }
         },
         {
-            "id": 65,
+            "id": 0,
             "nombre": "destornillador",
             "precio": 65.0,
             "costo": 35.0,
@@ -74,12 +74,12 @@
             "stock": 30,
             "stock_minimo": 10,
             "categoria": {
-                "id": 35,
+                "id": 0,
                 "nombre": "herramienta"
             }
         },
         {
-            "id": 14,
+            "id": 0,
             "nombre": "tornillo",
             "precio": 36.0,
             "costo": 25.0,
@@ -87,12 +87,12 @@
             "stock": 80,
             "stock_minimo": 15,
             "categoria": {
-                "id": 45,
+                "id": 0,
                 "nombre": "tornillos"
             }
         },
         {
-            "id": 74,
+            "id": 0,
             "nombre": "taladro",
             "precio": 65.0,
             "costo": 35.0,
@@ -100,12 +100,12 @@
             "stock": 50,
             "stock_minimo": 20,
             "categoria": {
-                "id": 7,
+                "id": 0,
                 "nombre": "taladros"
             }
         },
         {
-            "id": 2,
+            "id": 0,
             "nombre": "qqq",
             "precio": 12.0,
             "costo": 32.0,
@@ -113,8 +113,47 @@
             "stock": 54,
             "stock_minimo": 2,
             "categoria": {
-                "id": 1,
+                "id": 0,
                 "nombre": "qq"
+            }
+        },
+        {
+            "id": 0,
+            "nombre": "qqwwqwqw",
+            "precio": 12.0,
+            "costo": 13.0,
+            "cantidad": 2,
+            "stock": 23,
+            "stock_minimo": 1,
+            "categoria": {
+                "id": 0,
+                "nombre": "qwqww"
+            }
+        },
+        {
+            "id": 0,
+            "nombre": "qqwqw",
+            "precio": 12.0,
+            "costo": 32.0,
+            "cantidad": 12,
+            "stock": 24,
+            "stock_minimo": 2,
+            "categoria": {
+                "id": 0,
+                "nombre": "ssas"
+            }
+        },
+        {
+            "id": 1,
+            "nombre": "qqwq",
+            "precio": 23.0,
+            "costo": 21.0,
+            "cantidad": 2,
+            "stock": 43,
+            "stock_minimo": 2,
+            "categoria": {
+                "id": 1,
+                "nombre": "aa"
             }
         }
     ]

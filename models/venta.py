@@ -1,6 +1,8 @@
 class Venta:
+    id_venta = 0
     def _init_(self, id_venta, cliente, fecha):
-        self.id_venta = id_venta
+        Venta.id_venta +=1
+        self.id_venta = Venta.id_venta
         self.cliente = cliente
         self.fecha = fecha
         self.productos = []

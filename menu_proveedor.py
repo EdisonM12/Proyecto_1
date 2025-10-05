@@ -27,14 +27,13 @@ def mostrar_menu_admin():
 
         if opcion == "1":
             print("\n--- Registrar nuevo proveedor ---")
-            id = pedir_entero("ID: ")
             nombre = input("Nombre: ")
-            cedula = pedir_entero("Precio: ")
-            telefono = pedir_entero("Costo: ")
-            direccion = input("Cantidad: ")
-            empresa = input("Stock: ")
+            cedula = pedir_entero("Cedula: ")
+            telefono = pedir_entero("Telefono: ")
+            direccion = input("Direccion: ")
+            empresa = input("Empresa: ")
             try:
-                pv1 = servicio.crear_proveedor(id, nombre, cedula, telefono, direccion, empresa)
+                pv1 = servicio.crear_proveedor( nombre, cedula, telefono, direccion, empresa)
                 print(" Producto creado:", pv1)
             except ValueError as e:
                 print(" Error:", e)
@@ -51,20 +50,18 @@ def mostrar_menu_admin():
 
         elif opcion == "3":
             print("\n--- Registrar nuevo producto ---")
-            id = pedir_entero("ID: ")
             nombre = input("Nombre: ")
             cedula = pedir_entero("Precio: ")
             telefono = pedir_entero("Costo: ")
             direccion = input("Cantidad: ")
             empresa = input("Stock: ")
 
-            pv = servicio.actualizar_proveedor(id, nombre, cedula, telefono, direccion, empresa)
+            pv = servicio.actualizar_proveedor( nombre, cedula, telefono, direccion, empresa)
 
             print(" Producto actualizado:", pv)
 
 
         elif opcion == "4":
-            id = pedir_entero("ID: ")
             producto1 = servicio.eliminar_proveedor(id)
             print("Producto Eliminado :", producto1)  # Tu función existente
             # Tu función existente

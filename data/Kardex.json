@@ -81,6 +81,21 @@
             "fecha": "2025-09-30T21:32:39.185551",
             "stock_anterior": 70,
             "stock_nuevo": 77
+        },
+        {
+            "id_mov": 8,
+            "tipo": "COMPRA",
+            "fecha": "2025-10-04T23:26:34.933541",
+            "productos": [
+                {
+                    "id_producto": 0,
+                    "nombre": "leche",
+                    "cantidad": 1,
+                    "stock_anterior": 47,
+                    "stock_nuevo": 48
+                }
+            ],
+            "cantidad_total": 1
         }
     ]
 }
