@@ -17,12 +17,14 @@ from utils.validacion import pedir_flotante, pedir_entero
 def mostrar_menu_admin():
     servicio = ProductosServicie()
     while True:
-        print("\n--- MENÚ ADMINISTRADOR ---")
-        print("1. Agregar producto")
-        print("2. Listar productos")
-        print("3. Modificar producto")
-        print("4. Eliminar producto")
-        print("5. Salir")
+        print("╔══════════════════════════╗")
+        print("║--- MENÚ ADMINISTRADOR ---║")
+        print("║1. Agregar producto       ║")
+        print("║2. Listar productos       ║")
+        print("║3. Modificar producto     ║")
+        print("║4. Eliminar producto      ║" )
+        print("║5. Salir                  ║")
+        print("╚══════════════════════════╝")
 
         opcion = input("Seleccione una opción: ")
 
@@ -41,14 +43,13 @@ def mostrar_menu_admin():
                 print(" Producto creado:", producto)
             except ValueError as e:
                 print(" Error:", e)
-            # Tu función existente
+
 
 
 
         elif opcion == "2":
             producto2 = servicio.lsitar_producto()
             print("lista de productos: ", producto2)
-            # Tu función existente
 
 
 
@@ -73,8 +74,8 @@ def mostrar_menu_admin():
         elif opcion == "4":
             id = pedir_entero("ID: ")
             producto1 = servicio.eliminar_producto(id)
-            print("Producto Eliminado :", producto1)  # Tu función existente
-            # Tu función existente
+            print("Producto Eliminado :", producto1)
+
 
 
         elif opcion == "5":

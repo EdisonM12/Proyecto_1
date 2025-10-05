@@ -1,12 +1,12 @@
 {
     "productos": [
         {
-            "id": 0,
+            "id": 9,
             "nombre": "leche",
             "precio": 1.5,
             "costo": 0.5,
             "cantidad": 6,
-            "stock": 48,
+            "stock": 58,
             "stock_minimo": 10,
             "categoria": {
                 "id": 0,
@@ -14,12 +14,12 @@
             }
         },
         {
-            "id": 0,
+            "id": 2,
             "nombre": "papa",
             "precio": 2.3,
             "costo": 1.5,
             "cantidad": 30,
-            "stock": 54,
+            "stock": 74,
             "stock_minimo": 20,
             "categoria": {
                 "id": 0,
@@ -149,11 +149,24 @@
             "precio": 23.0,
             "costo": 21.0,
             "cantidad": 2,
-            "stock": 43,
+            "stock": 44,
             "stock_minimo": 2,
             "categoria": {
                 "id": 1,
                 "nombre": "aa"
+            }
+        },
+        {
+            "id": 1,
+            "nombre": "tornillo",
+            "precio": 36.0,
+            "costo": 15.0,
+            "cantidad": 66,
+            "stock": 100,
+            "stock_minimo": 10,
+            "categoria": {
+                "id": 1,
+                "nombre": "tornillos"
             }
         }
     ]

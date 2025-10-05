@@ -73,6 +73,8 @@ import app
 from utils.top_por_ingresos import top_por_ingresos
 import sys
 from utils.validacion import pedir_entero, pedir_flotante
+from tabulate import tabulate
+
 def esperar(mensaje: str = "", segundos: int = 3):
     print(f"\n{mensaje}")
     time.sleep(segundos)
@@ -105,9 +107,36 @@ def menus():
             movimientos = Crud_Inventario.listar_movimientos()
             if not movimientos:
                 print(" No hay movimientos registrados.")
-            else:
-                for m in movimientos:
-                    print(m)
+                return
+
+            tabla = []
+            for m in movimientos:
+                for p in m.get("productos", []):
+                    tabla.append([
+                        m.get("id_mov", ""),
+                        m.get("tipo", ""),
+                        m.get("fecha", ""),
+                        p.get("id_producto", ""),
+                        p.get("nombre", ""),
+                        p.get("cantidad", ""),
+                        p.get("stock_anterior", ""),
+                        p.get("stock_nuevo", ""),
+                        m.get("cantidad_total", "")
+                    ])
+
+            headers = [
+                "ID MOV",
+                "TIPO",
+                "FECHA",
+                "ID PRODUCTO",
+                "NOMBRE",
+                "CANTIDAD",
+                "STOCK ANTERIOR",
+                "STOCK NUEVO",
+                "CANTIDAD TOTAL"
+            ]
+
+            print(tabulate(tabla, headers=headers, tablefmt="fancy_grid"))
 
         elif opcion == "3":
             try:

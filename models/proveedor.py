@@ -29,10 +29,10 @@ class Proveedor:
 
     @classmethod
     def from_dict(cls, data: dict):
-        # Creamos el objeto sin pasar 'id'
+
         obj = cls(**{k: v for k, v in data.items() if k != "id"})
-        # Asignamos el ID después
+
         obj.id = data.get("id", obj.id)
-        # Actualizamos el contador
+
         cls.id_contador = max(cls.id_contador, obj.id)
         return obj
