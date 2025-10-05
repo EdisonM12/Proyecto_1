@@ -37,26 +37,27 @@ def cargar_datos():
         return []
 
 
-def guardar_datos(productos):
+def guardar_datos(productos, categoria):
     data_serializable = []
-    for p in productos:
+
+    for idx, p in enumerate(productos):
+        nuevo_id = idx + 1
+
         data_serializable.append({
-             "id": p.id,
-             "nombre": p.nombre,
-             "precio": p.precio,
-             "costo": p.costo,
-             "cantidad": p.cant,
-             "stock": p.stock,
+            "id": nuevo_id,
+            "nombre": p.nombre,
+            "precio": p.precio,
+            "costo": p.costo,
+            "cantidad": p.cant,
+            "stock": p.stock,
             "stock_minimo": p.stock_minimo,
-             "categoria": {
-                        "id": p.categoria.id,
-                        "nombre": p.categoria.nombre
-                      } if p.categoria else None
+            "categoria": {
+                "id": p.categoria.id,
+                "nombre": p.categoria.nombre
+            } if p.categoria else None
         })
     with open(archivo, "w") as f:
         json.dump({"productos": data_serializable}, f, indent=4, ensure_ascii=False)
-
-
 
 
 def crear_productos(producto):

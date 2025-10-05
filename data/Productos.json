@@ -1,7 +1,7 @@
 {
     "productos": [
         {
-            "id": 0,
+            "id": 1,
             "nombre": "leche",
             "precio": 1.5,
             "costo": 0.5,
@@ -14,7 +14,7 @@
             }
         },
         {
-            "id": 0,
+            "id": 2,
             "nombre": "papa",
             "precio": 2.3,
             "costo": 1.5,
@@ -27,7 +27,7 @@
             }
         },
         {
-            "id": 0,
+            "id": 3,
             "nombre": "llave inglesa",
             "precio": 60.0,
             "costo": 20.0,
@@ -40,7 +40,7 @@
             }
         },
         {
-            "id": 0,
+            "id": 4,
             "nombre": "pala",
             "precio": 60.0,
             "costo": 30.0,
@@ -53,7 +53,7 @@
             }
         },
         {
-            "id": 0,
+            "id": 5,
             "nombre": "llave",
             "precio": 30.0,
             "costo": 15.0,
@@ -66,7 +66,7 @@
             }
         },
         {
-            "id": 0,
+            "id": 6,
             "nombre": "destornillador",
             "precio": 65.0,
             "costo": 35.0,
@@ -79,7 +79,7 @@
             }
         },
         {
-            "id": 0,
+            "id": 7,
             "nombre": "tornillo",
             "precio": 36.0,
             "costo": 25.0,
@@ -92,7 +92,7 @@
             }
         },
         {
-            "id": 0,
+            "id": 8,
             "nombre": "taladro",
             "precio": 65.0,
             "costo": 35.0,
@@ -105,7 +105,7 @@
             }
         },
         {
-            "id": 0,
+            "id": 9,
             "nombre": "qqq",
             "precio": 12.0,
             "costo": 32.0,
@@ -118,7 +118,7 @@
             }
         },
         {
-            "id": 0,
+            "id": 10,
             "nombre": "qqwwqwqw",
             "precio": 12.0,
             "costo": 13.0,
@@ -131,7 +131,7 @@
             }
         },
         {
-            "id": 0,
+            "id": 11,
             "nombre": "qqwqw",
             "precio": 12.0,
             "costo": 32.0,
@@ -144,7 +144,7 @@
             }
         },
         {
-            "id": 1,
+            "id": 12,
             "nombre": "qqwq",
             "precio": 23.0,
             "costo": 21.0,
@@ -154,6 +154,19 @@
             "categoria": {
                 "id": 1,
                 "nombre": "aa"
+            }
+        },
+        {
+            "id": 13,
+            "nombre": "jajaja",
+            "precio": 2.0,
+            "costo": 12.0,
+            "cantidad": 3,
+            "stock": 24,
+            "stock_minimo": 1,
+            "categoria": {
+                "id": 1,
+                "nombre": "qqq"
             }
         }
     ]
