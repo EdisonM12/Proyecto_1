@@ -8,7 +8,6 @@ class Producto:
     nombre: str
     precio: int
     costo: int
-    cant: int
     stock: int
     stock_minimo: int
     categoria: "Categoria" = None
@@ -17,7 +16,7 @@ class Producto:
     id_contador = 0
 
     def __post_init__(self):
-        # Incrementa el contador y asigna el id
+
         type(self).id_contador += 1
         self.id = type(self).id_contador
 
@@ -28,7 +27,7 @@ class Producto:
 
     def validaciones_stcok(self):
         if self.stock <= self.stock_minimo:
-            raise ValueError("colocar mas stock")
+            raise ValueError("colocar más producto")
 
     def disminuir_stock(self, cantidad: int):
         if cantidad < 0:

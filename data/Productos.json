@@ -5,8 +5,7 @@
             "nombre": "leche",
             "precio": 1.5,
             "costo": 0.5,
-            "cantidad": 6,
-            "stock": 48,
+            "stock": 49,
             "stock_minimo": 10,
             "categoria": {
                 "id": 0,
@@ -18,8 +17,7 @@
             "nombre": "papa",
             "precio": 2.3,
             "costo": 1.5,
-            "cantidad": 30,
-            "stock": 54,
+            "stock": 74,
             "stock_minimo": 20,
             "categoria": {
                 "id": 0,
@@ -28,15 +26,14 @@
         },
         {
             "id": 3,
-            "nombre": "llave inglesa",
-            "precio": 60.0,
-            "costo": 20.0,
-            "cantidad": 30,
-            "stock": 35,
-            "stock_minimo": 10,
+            "nombre": "ashahha",
+            "precio": 12.0,
+            "costo": 2.0,
+            "stock": 12,
+            "stock_minimo": 1,
             "categoria": {
-                "id": 0,
-                "nombre": "llaves"
+                "id": 1,
+                "nombre": 1
             }
         },
         {
@@ -44,7 +41,6 @@
             "nombre": "pala",
             "precio": 60.0,
             "costo": 30.0,
-            "cantidad": 30,
             "stock": 50,
             "stock_minimo": 20,
             "categoria": {
@@ -57,7 +53,6 @@
             "nombre": "llave",
             "precio": 30.0,
             "costo": 15.0,
-            "cantidad": 60,
             "stock": 77,
             "stock_minimo": 20,
             "categoria": {
@@ -70,7 +65,6 @@
             "nombre": "destornillador",
             "precio": 65.0,
             "costo": 35.0,
-            "cantidad": 70,
             "stock": 30,
             "stock_minimo": 10,
             "categoria": {
@@ -83,7 +77,6 @@
             "nombre": "tornillo",
             "precio": 36.0,
             "costo": 25.0,
-            "cantidad": 36,
             "stock": 80,
             "stock_minimo": 15,
             "categoria": {
@@ -96,7 +89,6 @@
             "nombre": "taladro",
             "precio": 65.0,
             "costo": 35.0,
-            "cantidad": 60,
             "stock": 50,
             "stock_minimo": 20,
             "categoria": {
@@ -109,7 +101,6 @@
             "nombre": "qqq",
             "precio": 12.0,
             "costo": 32.0,
-            "cantidad": 34,
             "stock": 54,
             "stock_minimo": 2,
             "categoria": {
@@ -122,7 +113,6 @@
             "nombre": "qqwwqwqw",
             "precio": 12.0,
             "costo": 13.0,
-            "cantidad": 2,
             "stock": 23,
             "stock_minimo": 1,
             "categoria": {
@@ -135,7 +125,6 @@
             "nombre": "qqwqw",
             "precio": 12.0,
             "costo": 32.0,
-            "cantidad": 12,
             "stock": 24,
             "stock_minimo": 2,
             "categoria": {
@@ -148,25 +137,11 @@
             "nombre": "qqwq",
             "precio": 23.0,
             "costo": 21.0,
-            "cantidad": 2,
             "stock": 43,
             "stock_minimo": 2,
             "categoria": {
                 "id": 1,
                 "nombre": "aa"
-            }
-        },
-        {
-            "id": 13,
-            "nombre": "jajaja",
-            "precio": 2.0,
-            "costo": 12.0,
-            "cantidad": 3,
-            "stock": 24,
-            "stock_minimo": 1,
-            "categoria": {
-                "id": 1,
-                "nombre": "qqq"
             }
         }
     ]

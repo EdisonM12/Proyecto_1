@@ -14,7 +14,7 @@ def cargar_datos():
                 cat = None
                 if p.get("categoria"):
                     cat = Categoria(nombre=p["categoria"]["nombre"])
-                    # Asignamos el id de la categoría y actualizamos el contador
+
                     cat.id = p["categoria"].get("id", 0)
                     Categoria.id_cat = max(Categoria.id_cat, cat.id)
 
@@ -22,12 +22,11 @@ def cargar_datos():
                     nombre=p["nombre"],
                     precio=p["precio"],
                     costo=p["costo"],
-                    cant=p["cantidad"],
                     stock=p["stock"],
                     stock_minimo=p["stock_minimo"],
                     categoria=cat
                 )
-                # Asignamos el id del producto y actualizamos el contador
+
                 producto.id = p.get("id", 0)
                 Producto.id_contador = max(Producto.id_contador, producto.id)
 
@@ -37,7 +36,8 @@ def cargar_datos():
         return []
 
 
-def guardar_datos(productos, categoria):
+
+def guardar_datos(productos):
     data_serializable = []
 
     for idx, p in enumerate(productos):
@@ -48,7 +48,6 @@ def guardar_datos(productos, categoria):
             "nombre": p.nombre,
             "precio": p.precio,
             "costo": p.costo,
-            "cantidad": p.cant,
             "stock": p.stock,
             "stock_minimo": p.stock_minimo,
             "categoria": {
@@ -69,19 +68,21 @@ def obtener_productos():
     return cargar_datos()
 
 
-def actualizar_productos(id, nombre= None, precio=None, cant=None, costo= None,stock=None, stock_minimo=None, categoria=None ):
+def actualizar_productos(id=None, nombre= None, precio=None, costo= None, stock=None, stock_minimo=None, categoria=None ):
     productos = cargar_datos()
+    producto_actualizado = None
     for p in productos:
      if p.id == id:
+
         if nombre: p.nombre = nombre
         if precio: p.precio = precio
         if costo:p.costo=costo
-        if cant: p.cant = cant
         if stock: p.stock = stock
         if stock_minimo: p.stock_minimo = stock_minimo
         if categoria: p.categoria = categoria
         break
     guardar_datos(productos)
+    return producto_actualizado
 
 def eliminar_productos(id):
     productos = cargar_datos()

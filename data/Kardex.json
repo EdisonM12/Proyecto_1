@@ -96,6 +96,156 @@
                 }
             ],
             "cantidad_total": 1
+        },
+        {
+            "id_mov": 9,
+            "tipo": "COMPRA",
+            "fecha": "2025-10-05T11:21:05.250457",
+            "productos": [
+                {
+                    "id_producto": 0,
+                    "nombre": "leche",
+                    "cantidad": 1,
+                    "stock_anterior": 48,
+                    "stock_nuevo": 49
+                }
+            ],
+            "cantidad_total": 1
+        },
+        {
+            "id_mov": 10,
+            "tipo": "COMPRA",
+            "fecha": "2025-10-05T11:21:05.253696",
+            "productos": [
+                {
+                    "id_producto": 1,
+                    "nombre": "qqwq",
+                    "cantidad": 1,
+                    "stock_anterior": 43,
+                    "stock_nuevo": 44
+                }
+            ],
+            "cantidad_total": 1
+        },
+        {
+            "id_mov": 11,
+            "tipo": "COMPRA",
+            "fecha": "2025-10-05T13:58:14.775723",
+            "productos": [
+                {
+                    "id_producto": 9,
+                    "nombre": "leche",
+                    "cantidad": 1,
+                    "stock_anterior": 49,
+                    "stock_nuevo": 50
+                }
+            ],
+            "cantidad_total": 1
+        },
+        {
+            "id_mov": 12,
+            "tipo": "COMPRA",
+            "fecha": "2025-10-05T15:10:27.783687",
+            "productos": [
+                {
+                    "id_producto": 9,
+                    "nombre": "leche",
+                    "cantidad": 1,
+                    "stock_anterior": 50,
+                    "stock_nuevo": 51
+                }
+            ],
+            "cantidad_total": 1
+        },
+        {
+            "id_mov": 13,
+            "tipo": "COMPRA",
+            "fecha": "2025-10-05T15:10:39.180788",
+            "productos": [
+                {
+                    "id_producto": 9,
+                    "nombre": "leche",
+                    "cantidad": 1,
+                    "stock_anterior": 51,
+                    "stock_nuevo": 52
+                }
+            ],
+            "cantidad_total": 1
+        },
+        {
+            "id_mov": 14,
+            "tipo": "COMPRA",
+            "fecha": "2025-10-05T15:10:50.134761",
+            "productos": [
+                {
+                    "id_producto": 9,
+                    "nombre": "leche",
+                    "cantidad": 1,
+                    "stock_anterior": 52,
+                    "stock_nuevo": 53
+                }
+            ],
+            "cantidad_total": 1
+        },
+        {
+            "id_mov": 15,
+            "tipo": "COMPRA",
+            "fecha": "2025-10-05T15:19:30.070818",
+            "productos": [
+                {
+                    "id_producto": 9,
+                    "nombre": "leche",
+                    "cantidad": 3,
+                    "stock_anterior": 53,
+                    "stock_nuevo": 56
+                }
+            ],
+            "cantidad_total": 3
+        },
+        {
+            "id_mov": 16,
+            "tipo": "COMPRA",
+            "fecha": "2025-10-05T15:21:15.224039",
+            "productos": [
+                {
+                    "id_producto": 9,
+                    "nombre": "leche",
+                    "cantidad": 2,
+                    "stock_anterior": 56,
+                    "stock_nuevo": 58
+                }
+            ],
+            "cantidad_total": 2
+        },
+        {
+            "id_mov": 17,
+            "tipo": "COMPRA",
+            "fecha": "2025-10-05T15:21:15.226516",
+            "productos": [
+                {
+                    "id_producto": 2,
+                    "nombre": "papa",
+                    "cantidad": 20,
+                    "stock_anterior": 54,
+                    "stock_nuevo": 74
+                }
+            ],
+            "cantidad_total": 20
+        },
+        {
+            "id_mov": 18,
+            "tipo": "COMPRA",
+            "fecha": "2025-10-05T16:19:35.733004",
+            "productos": [
+                {
+                    "id_producto": 1,
+                    "nombre": "leche",
+                    "cantidad": 1,
+                    "stock_anterior": 48,
+                    "stock_nuevo": 49
+                }
+            ],
+            "cantidad_total": 1
         }
     ]
 }

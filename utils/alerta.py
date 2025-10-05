@@ -1,4 +1,5 @@
 import json
+from colorama import Fore, Style, init
 
 from models.producto import Producto
 
@@ -12,7 +13,7 @@ def alerta_de_stock_minimo():
     productos = data["productos"]
     for fa in productos:
         if fa["stock"] <= fa["stock_minimo"]:
-            print(f"Alerta: El producto '{fa['nombre']}' tiene stock mínimo ({fa['stock']})")
+            print(Fore.RED + f"Alerta: El producto '{fa['nombre']}' tiene stock mínimo ({fa['stock']})")
 
 
 def listar_stock_minimo():
@@ -36,25 +37,3 @@ def listar_stock_minimo():
     return list1
 
 
-def menu():
-    while True:
-        print("\n=== MENÚ ===")
-        print("1. Alerta de stock mínimo")
-        print("2. Listar productos con stock mínimo")
-        print("3. Salir")
-
-        opcion = input("Elige una opción: ")
-
-        if opcion == "1":
-            alerta_de_stock_minimo()
-        elif opcion == "2":
-            listar_stock_minimo()
-        elif opcion == "3":
-            print("Saliendo del programa...")
-            break
-        else:
-            print("Opción no válida. Intenta de nuevo.")
-
-
-
-menu()

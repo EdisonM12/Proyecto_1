@@ -28,7 +28,7 @@ def crear_proveedor(proveedor):
 def obtener_proveedor():
     return cargar_datos()
 
-def actualizar_proveedor(id, nombre=None, cedula=None, telefono=None, direccion=None, empresa=None):
+def actualizar_proveedor(id= None, nombre=None, cedula=None, telefono=None, direccion=None, empresa=None):
     proveedores = cargar_datos()
     for p in proveedores:
         if p.id == id:
@@ -39,6 +39,7 @@ def actualizar_proveedor(id, nombre=None, cedula=None, telefono=None, direccion=
             if empresa: p.empresa = empresa
             break
     guardar_datos(proveedores)
+
 
 def eliminar_proveedor(id):
     proveedores = cargar_datos()

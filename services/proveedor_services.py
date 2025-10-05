@@ -1,7 +1,7 @@
 from models.proveedor import Proveedor
 from services.proveedor_repository import ProveedorRepository
 from Crud import Crud_proveedor
-
+from tabulate import tabulate
 class ProveedorServices:
     def __init__(self):
         self.repo = ProveedorRepository()
@@ -12,12 +12,34 @@ class ProveedorServices:
         return proveedor
 
     def listar_proveedor(self):
-        return Crud_proveedor.obtener_proveedor()
 
-    def actualizar_proveedor(self, nombre= None, cedula= None , telefono= None, direccion= None, empresa= None):
-        Crud_proveedor.actualizar_proveedor(id, nombre, cedula, telefono, direccion, empresa)
+        proveedores = Crud_proveedor.obtener_proveedor()  # lista de objetos Proveedor
+
+        if not proveedores:
+            print("No hay proveedores registrados.")
+            return
+
+
+        tabla = []
+        for p in proveedores:
+            tabla.append([
+                p.nombre,
+                p.cedula,
+                p.telefono,
+                p.direccion,
+                p.empresa
+            ])
+
+        headers = ["NOMBRE", "CÉDULA", "TELÉFONO", "DIRECCIÓN", "EMPRESA"]
+
+
+        return(tabulate(tabla, headers=headers, tablefmt="grid"))
+
+    def actualizar_proveedor(self, id, nombre= None, cedula= None , telefono= None, direccion= None, empresa= None):
+        prov = Crud_proveedor.actualizar_proveedor(id, nombre, cedula, telefono, direccion, empresa)
+        return prov
 
     def eliminar_proveedor(self, id):
-        Crud_proveedor.eliminar_productos(id)
+        Crud_proveedor.eliminar_proveedor(id)
 
 

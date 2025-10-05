@@ -2,11 +2,10 @@ import json
 import os
 from datetime import datetime
 from Crud import Cru_producto
-
+from tabulate import tabulate
 KARDEX_JSON = "data/Kardex.json"
 
 def cargar_movimientos():
-    """Carga los movimientos desde el JSON"""
     if not os.path.exists(KARDEX_JSON) or os.path.getsize(KARDEX_JSON) == 0:
         return []
     try:
@@ -17,15 +16,13 @@ def cargar_movimientos():
         return []
 
 def guardar_movimientos(movimientos):
-    """Guarda los movimientos en el JSON"""
+
     os.makedirs(os.path.dirname(KARDEX_JSON), exist_ok=True)
     with open(KARDEX_JSON, "w", encoding="utf-8") as f:
         json.dump({"movimientos": movimientos}, f, indent=4, ensure_ascii=False)
 
 def registrar_movimiento(id_producto, tipo, cantidad):
-    """
-    Registra un movimiento de compra o venta de un solo producto.
-    """
+
     tipo = tipo.upper()
     productos = Cru_producto.cargar_datos()
     movimientos = cargar_movimientos()
@@ -62,19 +59,19 @@ def registrar_movimiento(id_producto, tipo, cantidad):
         "cantidad_total": cantidad
     }
 
-    # Guardar cambios en productos y movimientos
+
     Cru_producto.guardar_datos(productos)
     movimientos.append(movimiento)
     guardar_movimientos(movimientos)
 
-    print(f"✅ Movimiento registrado correctamente (ID {movimiento['id_mov']})")
+    print(f" Movimiento registrado correctamente (ID {movimiento['id_mov']})")
 
 def listar_movimientos():
-    """Lista todos los movimientos"""
+
     return cargar_movimientos()
 
 def actualizar_movimiento(id_mov, tipo=None, productos_ids_cant=None):
-    """Actualiza un movimiento existente"""
+
     movimientos = cargar_movimientos()
     for m in movimientos:
         if m["id_mov"] == id_mov:
@@ -98,8 +95,8 @@ def actualizar_movimiento(id_mov, tipo=None, productos_ids_cant=None):
     guardar_movimientos(movimientos)
 
 def eliminar_movimiento(id_mov):
-    """Elimina un movimiento por ID"""
+
     movimientos = cargar_movimientos()
     movimientos = [m for m in movimientos if m["id_mov"] != id_mov]
     guardar_movimientos(movimientos)
-    print(f"Movimiento {id_mov} eliminado ✅")
+    print(f"Movimiento {id_mov} eliminado ")
