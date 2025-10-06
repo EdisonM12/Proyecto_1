@@ -78,12 +78,15 @@ from utils.top_por_ingresos import top_por_ingresos
 import sys
 from utils.validacion import pedir_entero, pedir_flotante
 from tabulate import tabulate
+from aaa import barra
+from app import limpiar_pantalla
 
 def esperar(mensaje: str = "", segundos: int = 3):
     print(f"\n{mensaje}")
     time.sleep(segundos)
 
 def menus():
+    limpiar_pantalla()
     while True:
         print("╔══════════════════════════════════════════╗")
         print("║============  MENÚ INVENTARIO  ===========║")
@@ -99,6 +102,7 @@ def menus():
 
 
         if opcion == "1":
+            barra()
             movimientos = Crud_Inventario.listar_movimientos()
             if not movimientos:
                 print(" No hay movimientos registrados.")
@@ -132,26 +136,38 @@ def menus():
             ]
 
             print(tabulate(tabla, headers=headers, tablefmt="fancy_grid"))
-
+            limpiar_pantalla()
 
 
         elif opcion == "2":
+            barra()
             try:
                 id_mov = int(input("Ingrese ID del movimiento a eliminar: "))
                 Crud_Inventario.eliminar_movimiento(id_mov)
             except ValueError:
                 print(" ID inválido.")
+
+            barra()
+            limpiar_pantalla()
+
         elif opcion == "3":
+            barra()
             top_por_ingresos()
         elif opcion == "4":
+
             esperar("Regresando al menú anterior", 3)
+            barra()
+            limpiar_pantalla()
             return app.login()
 
         elif opcion == "5":
+            barra()
             esperar(" Saliendo del sistema...",3)
             sys.exit()
         else:
             print(" Opción inválida, intente de nuevo.")
+
+        limpiar_pantalla()
 
 if __name__ == "_main_":
     menus()

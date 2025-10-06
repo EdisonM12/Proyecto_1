@@ -7,9 +7,9 @@ class ProductosServicie:
     def __init__(self):
         self.repo = ProductoRepository()
 
-    def crear_producto(self, nombre,precio,costo,cant, stock ,stock_minimo, categoria):
+    def crear_producto(self, nombre,precio,costo, stock ,stock_minimo, categoria):
 
-        producto = Producto(nombre,precio,costo,cant,stock,stock_minimo,categoria)
+        producto = Producto(nombre,precio,costo,stock,stock_minimo,categoria)
         Cru_producto.crear_productos(producto)
         return producto
 
@@ -28,13 +28,12 @@ class ProductosServicie:
                 p.nombre,
                 p.precio,
                 p.costo,
-                p.cant,
                 p.stock,
                 p.stock_minimo,
                 p.categoria.nombre if p.categoria else "Sin categoría"
             ])
 
-        headers = ["NOMBRE", "PRECIO", "COSTO", "CANTIDAD", "STOCK", "STOCK MÍNIMO", "CATEGORÍA"]
+        headers = ["NOMBRE", "PRECIO", "COSTO", "STOCK", "STOCK MÍNIMO", "CATEGORÍA"]
 
 
         return(tabulate(tabla, headers=headers, tablefmt="grid"))

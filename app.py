@@ -2,11 +2,11 @@ import sys
 import time
 import os
 import platform
+
+from click import style
 from rich.console import Console
-from unicodedata import category
 from utils.margen_ganancia import calcular_margen_producto
-from models.categoria import Categoria
-from models.producto import Producto
+
 from services.productos_services import ProductosServicie
 from services.proveedor_services import ProveedorServices
 import json
@@ -14,8 +14,10 @@ import menu_inventario
 from menu_producto import mostrar_menu_admin as menu_admin_producto
 from menu_proveedor import mostrar_menu_admin as menu_admin_proveedor
 from utils.funciones_Cliente import mostrar_prod
-from utils.validacion import pedir_entero, pedir_flotante
 from utils.alerta import alerta_de_stock_minimo
+from colorama import Fore, Style, init
+from aaa import barra
+
 
 archivo = "data/administrador.json"
 with open(archivo, "r", encoding="utf-8") as f:
@@ -44,7 +46,7 @@ def login_admin():
     print("║      LOGIN ADMINISTRADOR           ║")
     print("╚════════════════════════════════════╝\n")
 
-    username = input("Ingrese usuario: ")
+    username = input(Style.BRIGHT + "Ingrese usuario: ")
     password = input("Ingrese contraseña: ")
 
     for user in data["users"]:
@@ -74,14 +76,18 @@ def login():
         opcion = input("Seleccione una opción: ").strip()
 
         if opcion == "1":
+            barra()
             login_admin()
             alerta_de_stock_minimo()
 
         elif opcion == "2":
             esperar(" Ingresando como cliente...", 2)
+            barra()
+
             menu_cliente()
         elif opcion == "3":
             esperar(" Saliendo del sistema....", 2)
+            barra()
             limpiar_pantalla()
             sys.exit()
         else:
@@ -112,9 +118,11 @@ def menu_cliente():
             mostrar_prod()
         elif op == "2":
             esperar(" Regresando al menú principal...", 2)
+            barra()
             return
         elif op == "3":
             esperar(" Saliendo del sistema...", 2)
+            barra()
             limpiar_pantalla()
             sys.exit()
         else:
@@ -146,19 +154,25 @@ def menu_administrador():
 
         if op == "1":
             esperar(" Calculando margen de los productos...", 2)
+            barra()
             calcular_margen_producto()
         elif op == "2":
+            esperar("Gestionando Productos...", 2)
+            barra()
             menu_admin_producto()
         elif op == "3":
             menu_admin_proveedor()
         elif op == "4":
             esperar(" Cargando menú de inventario...", 2)
+            barra()
             menu_inventario.menus()
         elif op == "5":
             esperar(" Regresando al menú principal...", 2)
-            return
+            barra()
+            login()
         elif op == "6":
             esperar(" Saliendo del sistema....", 2)
+            barra()
             limpiar_pantalla()
             sys.exit()
         else:

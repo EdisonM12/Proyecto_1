@@ -143,6 +143,30 @@
                 "id": 1,
                 "nombre": "aa"
             }
+        },
+        {
+            "id": 13,
+            "nombre": "kakka",
+            "precio": 12.0,
+            "costo": 23.0,
+            "stock": 222,
+            "stock_minimo": 12,
+            "categoria": {
+                "id": 1,
+                "nombre": "qqq"
+            }
+        },
+        {
+            "id": 14,
+            "nombre": "jajjaa",
+            "precio": 12.0,
+            "costo": 1.0,
+            "stock": 23,
+            "stock_minimo": 2,
+            "categoria": {
+                "id": 1,
+                "nombre": "ooaoaoa"
+            }
         }
     ]
 }
