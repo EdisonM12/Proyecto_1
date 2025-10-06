@@ -3,8 +3,7 @@ import time
 import os
 import platform
 
-from click import style
-from rich.console import Console
+
 from utils.margen_ganancia import calcular_margen_producto
 
 from services.productos_services import ProductosServicie
@@ -22,8 +21,6 @@ from aaa import barra
 archivo = "data/administrador.json"
 with open(archivo, "r", encoding="utf-8") as f:
     data = json.load(f)
-
-console = Console()
 
 
 def limpiar_pantalla():
@@ -49,7 +46,7 @@ def login_admin():
     username = input(Style.BRIGHT + "Ingrese usuario: ")
     password = input("Ingrese contraseña: ")
 
-    for user in data["users"]:
+    for user in data["users"]: #recorrer el json
         if user["username"] == username and user["password"] == password:
             esperar(f" Bienvenido {username}!", 2)
             menu_administrador()
@@ -57,6 +54,9 @@ def login_admin():
 
     print("\n Usuario o contraseña incorrectos.\n")
     esperar("", 2)
+
+    login_admin()
+
 
 
 def login():
@@ -119,7 +119,7 @@ def menu_cliente():
         elif op == "2":
             esperar(" Regresando al menú principal...", 2)
             barra()
-            return
+
         elif op == "3":
             esperar(" Saliendo del sistema...", 2)
             barra()

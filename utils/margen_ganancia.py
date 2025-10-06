@@ -40,6 +40,3 @@ def calcular_margen_producto():
 
     print (tabulate(tabla, headers=headers, tablefmt="grid"))
     esperar("Regresando al menu anterior",5)
-
-
-

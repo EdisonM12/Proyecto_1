@@ -22,6 +22,8 @@
 #     mejor = ranking[0]
 #     print("\nTotal de ingresos:", total)
 #     print(f"Producto más rentable: {mejor[0]} con ${mejor[1]:.2f}")
+
+
 import json
 from tabulate import tabulate
 def top_por_ingresos():
@@ -30,11 +32,8 @@ def top_por_ingresos():
         json_data = json.load(archivo)
 
     productos = json_data.get("productos", [])
-    producto_ordenado= sorted(productos, key=lambda x: x["costo"], reverse=False)
+    producto_ordenado= sorted(productos, key=lambda x: x["costo"], reverse=False) # ordenamiento de productos, key lambada es un filtrado que toma
     encabezado = ["Nombre", "Precio", "Costo"]
     tabala = [[p["nombre"], p["precio"], p["costo"]]for p in producto_ordenado[:5]]
     print(tabulate(tabala , headers=encabezado, tablefmt="grid" ))
-
-
-
 

@@ -276,6 +276,21 @@
                 }
             ],
             "cantidad_total": 2
+        },
+        {
+            "id_mov": 21,
+            "tipo": "VENTA",
+            "fecha": "2025-10-05T21:04:59.512603",
+            "productos": [
+                {
+                    "id_producto": 12,
+                    "nombre": "qqwq",
+                    "cantidad": 1,
+                    "stock_anterior": 43,
+                    "stock_nuevo": 42
+                }
+            ],
+            "cantidad_total": 1
         }
     ]
 }

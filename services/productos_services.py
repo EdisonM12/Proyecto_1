@@ -38,7 +38,7 @@ class ProductosServicie:
 
         return(tabulate(tabla, headers=headers, tablefmt="grid"))
 
-    def actualizar_producto(self,id, nombre = None,precio = None,costo=None,stock = None,stock_minimo = None, categoria= None):
+    def actualizar_producto(self,id, nombre = None ,precio = None ,costo=None ,stock = None ,stock_minimo = None , categoria= None ):
         pro = Cru_producto.actualizar_productos(id, nombre, precio,costo, stock, stock_minimo, categoria)
 
         return pro
