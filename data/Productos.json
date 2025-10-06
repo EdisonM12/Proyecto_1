@@ -2,50 +2,50 @@
     "productos": [
         {
             "id": 1,
-            "nombre": "leche",
+            "nombre": "pala",
             "precio": 1.5,
             "costo": 0.5,
             "stock": 45,
             "stock_minimo": 10,
             "categoria": {
                 "id": 0,
-                "nombre": "lacteos"
+                "nombre": "palas"
             }
         },
         {
             "id": 2,
-            "nombre": "papa",
+            "nombre": "pico",
             "precio": 2.3,
             "costo": 1.5,
             "stock": 74,
             "stock_minimo": 20,
             "categoria": {
                 "id": 0,
-                "nombre": "vegetal"
+                "nombre": "picos"
             }
         },
         {
             "id": 3,
-            "nombre": "ashahha",
+            "nombre": "tornillos",
             "precio": 12.0,
             "costo": 2.0,
             "stock": 12,
             "stock_minimo": 1,
             "categoria": {
                 "id": 1,
-                "nombre": 1
+                "nombre": "tornillos"
             }
         },
         {
             "id": 4,
-            "nombre": "pala",
+            "nombre": "machete",
             "precio": 60.0,
             "costo": 30.0,
             "stock": 50,
             "stock_minimo": 20,
             "categoria": {
                 "id": 0,
-                "nombre": "palas"
+                "nombre": "machetes"
             }
         },
         {
@@ -98,74 +98,74 @@
         },
         {
             "id": 9,
-            "nombre": "qqq",
-            "precio": 12.0,
+            "nombre": "clavo",
+            "precio": 42.0,
             "costo": 32.0,
             "stock": 54,
             "stock_minimo": 2,
             "categoria": {
                 "id": 0,
-                "nombre": "qq"
+                "nombre": "clavos"
             }
         },
         {
             "id": 10,
-            "nombre": "qqwwqwqw",
-            "precio": 12.0,
+            "nombre": "martillo",
+            "precio": 72.0,
             "costo": 13.0,
             "stock": 22,
             "stock_minimo": 1,
             "categoria": {
                 "id": 0,
-                "nombre": "qwqww"
+                "nombre": "martillos"
             }
         },
         {
             "id": 11,
-            "nombre": "qqwqw",
-            "precio": 12.0,
+            "nombre": "pinzas",
+            "precio": 52.0,
             "costo": 32.0,
             "stock": 24,
             "stock_minimo": 2,
             "categoria": {
                 "id": 0,
-                "nombre": "ssas"
+                "nombre": "pinzas"
             }
         },
         {
             "id": 12,
-            "nombre": "qqwq",
+            "nombre": " cerrucho",
             "precio": 23.0,
             "costo": 21.0,
             "stock": 43,
             "stock_minimo": 2,
             "categoria": {
                 "id": 1,
-                "nombre": "aa"
+                "nombre": "cerruchos"
             }
         },
         {
             "id": 13,
-            "nombre": "kakka",
-            "precio": 12.0,
+            "nombre": "tuercas",
+            "precio": 32.0,
             "costo": 23.0,
             "stock": 102,
             "stock_minimo": 12,
             "categoria": {
                 "id": 1,
-                "nombre": "qqq"
+                "nombre": "tuercas"
             }
         },
         {
             "id": 14,
-            "nombre": "jajjaa",
+            "nombre": "cables",
             "precio": 12.0,
             "costo": 1.0,
             "stock": 27,
             "stock_minimo": 2,
             "categoria": {
                 "id": 1,
-                "nombre": 3
+                "nombre": "cables"
             }
         },
         {

@@ -10,7 +10,6 @@ def barra():
         progress.update(task, advance=1)
         time.sleep(0.03)
 
-    # Centrar barra: se puede imprimir dentro de Align
     from rich.console import Console
 
     console = Console()
