@@ -246,6 +246,36 @@
                 }
             ],
             "cantidad_total": 1
+        },
+        {
+            "id_mov": 19,
+            "tipo": "VENTA",
+            "fecha": "2025-10-05T20:48:38.190423",
+            "productos": [
+                {
+                    "id_producto": 1,
+                    "nombre": "leche",
+                    "cantidad": 2,
+                    "stock_anterior": 49,
+                    "stock_nuevo": 47
+                }
+            ],
+            "cantidad_total": 2
+        },
+        {
+            "id_mov": 20,
+            "tipo": "VENTA",
+            "fecha": "2025-10-05T20:52:40.159793",
+            "productos": [
+                {
+                    "id_producto": 1,
+                    "nombre": "leche",
+                    "cantidad": 2,
+                    "stock_anterior": 47,
+                    "stock_nuevo": 45
+                }
+            ],
+            "cantidad_total": 2
         }
     ]
 }

@@ -5,7 +5,7 @@
             "nombre": "leche",
             "precio": 1.5,
             "costo": 0.5,
-            "stock": 49,
+            "stock": 45,
             "stock_minimo": 10,
             "categoria": {
                 "id": 0,

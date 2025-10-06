@@ -5,6 +5,9 @@ from tabulate import tabulate
 from tabulate import tabulate
 import json
 
+from utils.limpiar import limpiar_pantalla
+
+
 def mostrar_prod():
     archivo1 = "data/Productos.json"
     with open(archivo1, "r", encoding="utf-8") as f:
@@ -67,5 +70,7 @@ def mostrar_prod():
         print("\n=== RESUMEN FINAL DE COMPRA ===")
         print(tabulate(productos_comprados, headers=["Nombre", "Cantidad", "Precio"], tablefmt="grid"))
         print(f"\n{'TOTAL:':>20} ${total_general}")
+        limpiar_pantalla()
     else:
         print("\nNo se seleccionaron productos.")
+        limpiar_pantalla()

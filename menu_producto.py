@@ -1,12 +1,11 @@
 from aaa import barra
+import os
 from models.categoria import Categoria
 from services.productos_services import ProductosServicie
 from utils.validacion import pedir_flotante, pedir_entero
-from app import limpiar_pantalla
-
+from utils.limpiar import limpiar_pantalla
 
 def mostrar_menu_admin():
-    limpiar_pantalla()
     servicio = ProductosServicie()
     while True:
         print("╔══════════════════════════╗")
@@ -23,6 +22,7 @@ def mostrar_menu_admin():
         if opcion == "1":
             barra()
             limpiar_pantalla()
+
             print("\n--- Registrar nuevo producto ---")
             nombre = input("Nombre: ")
             precio = pedir_flotante("Precio: ")
@@ -42,7 +42,7 @@ def mostrar_menu_admin():
 
         elif opcion == "2":
             barra()
-            limpiar_pantalla()
+
             producto2 = servicio.lsitar_producto()
             print("lista de productos: ", producto2)
 
@@ -50,7 +50,7 @@ def mostrar_menu_admin():
 
         elif opcion == "3":
             barra()
-            limpiar_pantalla()
+
             print("\n--- Actualizar nuevo producto ---")
             id = pedir_entero("ID: ")
             nombre = input("Nombre: ")
@@ -70,7 +70,7 @@ def mostrar_menu_admin():
 
         elif opcion == "4":
             barra()
-            limpiar_pantalla()
+
             id = pedir_entero("ID: ")
             producto1 = servicio.eliminar_producto(id)
             print("Producto Eliminado")
@@ -79,7 +79,7 @@ def mostrar_menu_admin():
 
         elif opcion == "5":
             barra()
-            limpiar_pantalla()
+
             print("Saliendo del menú...")
             break
         else:
