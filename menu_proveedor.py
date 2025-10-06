@@ -1,7 +1,13 @@
+
 from services.proveedor_services import ProveedorServices
+import json
+import menu_inventario
 from utils.validacion import pedir_flotante, pedir_entero
+from aaa import barra
+from utils.limpiar import limpiar_pantalla
 
 def mostrar_menu_admin():
+    limpiar_pantalla()
     servicio = ProveedorServices()
     while True:
         print("╔══════════════════════════╗")
@@ -16,6 +22,8 @@ def mostrar_menu_admin():
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
+            barra()
+            limpiar_pantalla()
             print("\n--- Registrar nuevo proveedor ---")
 
             nombre = input("Nombre: ")
@@ -33,6 +41,8 @@ def mostrar_menu_admin():
 
 
         elif opcion == "2":
+            barra()
+            limpiar_pantalla()
             producto2 = servicio.listar_proveedor()
             print("lista de productos: ", producto2)
 
@@ -40,6 +50,8 @@ def mostrar_menu_admin():
 
 
         elif opcion == "3":
+            barra()
+            limpiar_pantalla()
             print("\n--- Actualizar Proveedor ---")
             id = pedir_entero("ID: ")
             nombre = input("Nombre: ")
@@ -54,6 +66,8 @@ def mostrar_menu_admin():
 
 
         elif opcion == "4":
+            barra()
+            limpiar_pantalla()
             id = pedir_entero("ID: ")
 
             producto1 = servicio.eliminar_proveedor(id)
@@ -63,6 +77,8 @@ def mostrar_menu_admin():
 
 
         elif opcion == "5":
+            barra()
+            limpiar_pantalla()
             print("Saliendo del menú...")
             break
         else:

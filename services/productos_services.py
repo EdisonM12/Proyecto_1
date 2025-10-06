@@ -33,7 +33,7 @@ class ProductosServicie:
                 p.categoria.nombre if p.categoria else "Sin categoría"
             ])
 
-        headers = ["NOMBRE", "PRECIO", "COSTO", "CANTIDAD", "STOCK", "STOCK MÍNIMO", "CATEGORÍA"]
+        headers = ["NOMBRE", "PRECIO", "COSTO", "STOCK", "STOCK MÍNIMO", "CATEGORÍA"]
 
 
         return(tabulate(tabla, headers=headers, tablefmt="grid"))

@@ -261,6 +261,111 @@
                 }
             ],
             "cantidad_total": 1
+        },
+        {
+            "id_mov": 19,
+            "tipo": "VENTA",
+            "fecha": "2025-10-05T20:48:38.190423",
+            "productos": [
+                {
+                    "id_producto": 1,
+                    "nombre": "leche",
+                    "cantidad": 2,
+                    "stock_anterior": 49,
+                    "stock_nuevo": 47
+                }
+            ],
+            "cantidad_total": 2
+        },
+        {
+            "id_mov": 20,
+            "tipo": "VENTA",
+            "fecha": "2025-10-05T20:52:40.159793",
+            "productos": [
+                {
+                    "id_producto": 1,
+                    "nombre": "leche",
+                    "cantidad": 2,
+                    "stock_anterior": 47,
+                    "stock_nuevo": 45
+                }
+            ],
+            "cantidad_total": 2
+        },
+        {
+            "id_mov": 22,
+            "tipo": "VENTA",
+            "fecha": "2025-10-05T21:16:53.622108",
+            "productos": [
+                {
+                    "id_producto": 14,
+                    "nombre": "jajjaa",
+                    "cantidad": 4,
+                    "stock_anterior": 23,
+                    "stock_nuevo": 19
+                }
+            ],
+            "cantidad_total": 4
+        },
+        {
+            "id_mov": 23,
+            "tipo": "VENTA",
+            "fecha": "2025-10-05T21:18:01.261595",
+            "productos": [
+                {
+                    "id_producto": 14,
+                    "nombre": "jajjaa",
+                    "cantidad": 9,
+                    "stock_anterior": 19,
+                    "stock_nuevo": 10
+                }
+            ],
+            "cantidad_total": 9
+        },
+        {
+            "id_mov": 24,
+            "tipo": "VENTA",
+            "fecha": "2025-10-05T21:18:01.266175",
+            "productos": [
+                {
+                    "id_producto": 13,
+                    "nombre": "kakka",
+                    "cantidad": 100,
+                    "stock_anterior": 222,
+                    "stock_nuevo": 122
+                }
+            ],
+            "cantidad_total": 100
+        },
+        {
+            "id_mov": 25,
+            "tipo": "VENTA",
+            "fecha": "2025-10-05T21:18:01.272463",
+            "productos": [
+                {
+                    "id_producto": 8,
+                    "nombre": "taladro",
+                    "cantidad": 10,
+                    "stock_anterior": 50,
+                    "stock_nuevo": 40
+                }
+            ],
+            "cantidad_total": 10
+        },
+        {
+            "id_mov": 26,
+            "tipo": "VENTA",
+            "fecha": "2025-10-05T21:18:57.262762",
+            "productos": [
+                {
+                    "id_producto": 14,
+                    "nombre": "jajjaa",
+                    "cantidad": 3,
+                    "stock_anterior": 10,
+                    "stock_nuevo": 7
+                }
+            ],
+            "cantidad_total": 3
         }
     ]
 }
