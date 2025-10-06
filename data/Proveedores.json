@@ -1,11 +1,11 @@
 {
     "proveedor": [
         {
-            "nombre": "qqq",
-            "cedula": 1234567898,
-            "telefono": 9876543213,
-            "direccion": "ttt",
-            "empresa": "ggggg",
+            "nombre": "fff",
+            "cedula": 2039485475,
+            "telefono": 987654321,
+            "direccion": "hhh",
+            "empresa": "ddd",
             "id": 15
         },
         {
@@ -15,6 +15,14 @@
             "direccion": "yyy",
             "empresa": "ijsa",
             "id": 16
+        },
+        {
+            "nombre": "dd",
+            "cedula": 12121212121,
+            "telefono": 1212121212,
+            "direccion": "gfgg",
+            "empresa": "fff",
+            "id": 23
         }
     ]
 }

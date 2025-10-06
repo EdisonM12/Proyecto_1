@@ -366,6 +366,81 @@
                 }
             ],
             "cantidad_total": 3
+        },
+        {
+            "id_mov": 27,
+            "tipo": "VENTA",
+            "fecha": "2025-10-06T09:57:33.261448",
+            "productos": [
+                {
+                    "id_producto": 14,
+                    "nombre": "jajjaa",
+                    "cantidad": 6,
+                    "stock_anterior": 7,
+                    "stock_nuevo": 1
+                }
+            ],
+            "cantidad_total": 6
+        },
+        {
+            "id_mov": 28,
+            "tipo": "VENTA",
+            "fecha": "2025-10-06T10:01:38.961001",
+            "productos": [
+                {
+                    "id_producto": 10,
+                    "nombre": "qqwwqwqw",
+                    "cantidad": 1,
+                    "stock_anterior": 23,
+                    "stock_nuevo": 22
+                }
+            ],
+            "cantidad_total": 1
+        },
+        {
+            "id_mov": 29,
+            "tipo": "VENTA",
+            "fecha": "2025-10-06T10:02:22.010287",
+            "productos": [
+                {
+                    "id_producto": 14,
+                    "nombre": "jajjaa",
+                    "cantidad": 3,
+                    "stock_anterior": 30,
+                    "stock_nuevo": 27
+                }
+            ],
+            "cantidad_total": 3
+        },
+        {
+            "id_mov": 30,
+            "tipo": "VENTA",
+            "fecha": "2025-10-06T10:02:22.016976",
+            "productos": [
+                {
+                    "id_producto": 13,
+                    "nombre": "kakka",
+                    "cantidad": 20,
+                    "stock_anterior": 122,
+                    "stock_nuevo": 102
+                }
+            ],
+            "cantidad_total": 20
+        },
+        {
+            "id_mov": 31,
+            "tipo": "VENTA",
+            "fecha": "2025-10-06T10:03:16.673539",
+            "productos": [
+                {
+                    "id_producto": 15,
+                    "nombre": "Destornillador",
+                    "cantidad": 1,
+                    "stock_anterior": 30,
+                    "stock_nuevo": 29
+                }
+            ],
+            "cantidad_total": 1
         }
     ]
 }

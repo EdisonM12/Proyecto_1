@@ -1,6 +1,6 @@
 from Crud import Crud_Inventario
 import time
-import app
+from app import menu_administrador
 from utils.top_por_ingresos import top_por_ingresos
 import sys
 from tabulate import tabulate
@@ -12,7 +12,7 @@ def esperar(mensaje: str = "", segundos: int = 3):
     time.sleep(segundos)
 
 def menus():
-    limpiar_pantalla()
+
     while True:
         print("╔══════════════════════════════════════════╗")
         print("║============  MENÚ INVENTARIO  ===========║")
@@ -62,6 +62,7 @@ def menus():
             ]
 
             print(tabulate(tabla, headers=headers, tablefmt="fancy_grid"))
+            esperar("",5)
             limpiar_pantalla()
 
 
@@ -84,14 +85,14 @@ def menus():
             esperar("Regresando al menú anterior", 3)
             barra()
             limpiar_pantalla()
-            return app.login()
+            menu_administrador()
 
         elif opcion == "5":
             barra()
             esperar(" Saliendo del sistema...",3)
             sys.exit()
         else:
-            print(" Opción inválida, intente de nuevo.")
+            print(" Opción inválida, intente de nuevo.")
 
         limpiar_pantalla()
 

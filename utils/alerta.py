@@ -3,7 +3,7 @@ from colorama import Fore, Style, init
 
 from models.producto import Producto
 
-archivo = r"C:\Users\Edison\Desktop\Proyecto_Poo\Proyecto_1\data\Productos.json"
+archivo = "data\Productos.json"
 
 
 def alerta_de_stock_minimo():

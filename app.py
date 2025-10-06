@@ -57,6 +57,7 @@ def login_admin():
 
     print("\n Usuario o contraseña incorrectos.\n")
     esperar("", 2)
+    login_admin()
 
 
 def login():
@@ -78,7 +79,7 @@ def login():
         if opcion == "1":
             barra()
             login_admin()
-            alerta_de_stock_minimo()
+
 
         elif opcion == "2":
             esperar(" Ingresando como cliente...", 2)
@@ -136,7 +137,10 @@ def menu_administrador():
     pro = ProveedorServices()
 
     while True:
+        alerta_de_stock_minimo()
+        esperar("", 3)
         limpiar_pantalla()
+
         print("\n")
         print("╔═════════════════════════════════════════════════╗")
         print("║=============  MENÚ ADMINISTRADOR  ==============║")
